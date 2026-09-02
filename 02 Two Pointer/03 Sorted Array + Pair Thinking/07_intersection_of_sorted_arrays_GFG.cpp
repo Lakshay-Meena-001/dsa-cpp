@@ -21,7 +21,7 @@ vector<int> intersectionOfSortedArrays(vector<int> &A, vector<int> &B)
         }
         else
         {
-            // if kya kar raha hai ki answer vector me last element ko check kar raha hai ki agar wo same hai to push nahi karega 
+            // if kya kar raha hai ki answer vector me last element ko check kar raha hai ki agar wo same hai to push nahi karega
             if (answer.empty() || answer.back() != A[i])
             {
                 answer.push_back(A[i]);
