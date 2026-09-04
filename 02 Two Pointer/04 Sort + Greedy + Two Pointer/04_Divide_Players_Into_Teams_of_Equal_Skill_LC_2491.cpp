@@ -16,14 +16,15 @@ long long dividePlayers(vector<int> &skill)
         totalSkill += x;
     }
 
+    int teams = n / 2;
     // Every team must have the same skill sum.
     // Number of teams = n / 2.
-    if (totalSkill % (n / 2) != 0)
+    if (totalSkill % (teams) != 0)
     {
         return -1;
     }
 
-    long long target = totalSkill / (n / 2);
+    long long target = totalSkill / teams;
 
     int left = 0;
     int right = n - 1;
