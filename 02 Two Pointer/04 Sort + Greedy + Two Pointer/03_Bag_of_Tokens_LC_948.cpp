@@ -16,9 +16,10 @@ int bagOfTokensScore(vector<int> &tokens, int power)
     while (left <= right)
     {
         // Face up:
-        // Use the smallest token to gain score.
+        // to score badhana hai to best way hai sbse chhota token pick karna 
         if (power >= tokens[left])
-        {
+        {   
+            // power me se token jitni power chali gyi 
             power -= tokens[left];
             score++;
             maxScore = max(maxScore, score);
@@ -26,8 +27,8 @@ int bagOfTokensScore(vector<int> &tokens, int power)
             left++;
         }
 
-        // If we cannot afford the smallest token,
-        // try to recover power by sacrificing one score.
+        // to agar enough power nahi hai to score kam karna padega aur power recover karna padega
+        // to koshish karo ki maximum power recover ho aur score kam se kam use ho and jo token power recover k liye liya wo token wapis nahi le skte 
         else if (score > 0)
         {
             power += tokens[right];
@@ -35,7 +36,7 @@ int bagOfTokensScore(vector<int> &tokens, int power)
 
             right--;
         }
-
+        
         // Cannot gain score and cannot sacrifice score.
         else
         {

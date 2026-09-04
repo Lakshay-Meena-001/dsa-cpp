@@ -42,6 +42,7 @@ void dfsIterative(int source, const vector<vector<int>> &adj, vector<bool> &visi
 void dfsTraversal(const vector<vector<int>> &adj)
 {
     int n = adj.size();
+    
     vector<bool> visited(n, false);
 
     // Visit every connected component
