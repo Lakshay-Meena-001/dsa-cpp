@@ -15,8 +15,7 @@ void dfs(int row, int col, vector<vector<char>> &grid)
     int cols = grid[0].size();
 
     // Boundary Check
-    if (row < 0 || row >= rows ||
-        col < 0 || col >= cols)
+    if (row < 0 || row >= rows || col < 0 || col >= cols)
     {
         return;
     }
@@ -27,7 +26,7 @@ void dfs(int row, int col, vector<vector<char>> &grid)
         return;
     }
 
-    // Mark Current Cell as Visited
+    // Mark Current Cell as Visited kyuki wapis isko count na karle to 1 ko 0 karte jao
     grid[row][col] = '0';
 
     // Visit 4 Directions
@@ -78,3 +77,61 @@ int main()
 
     return 0;
 }
+
+/*
+class Solution
+{
+public:
+
+    int dr[4] = {-1, 1, 0, 0};
+    int dc[4] = {0, 0, -1, 1};
+
+    void dfs(int row,
+             int col,
+             vector<vector<char>>& grid)
+    {
+        int rows = grid.size();
+        int cols = grid[0].size();
+
+        // Mark as visited
+        grid[row][col] = '0';
+
+        for (int i = 0; i < 4; i++)
+        {
+            int newRow = row + dr[i];
+            int newCol = col + dc[i];
+
+            if (newRow >= 0 &&
+                newRow < rows &&
+                newCol >= 0 &&
+                newCol < cols &&
+                grid[newRow][newCol] == '1')
+            {
+                dfs(newRow, newCol, grid);
+            }
+        }
+    }
+
+    int numIslands(vector<vector<char>>& grid)
+    {
+        int rows = grid.size();
+        int cols = grid[0].size();
+
+        int islands = 0;
+
+        for (int row = 0; row < rows; row++)
+        {
+            for (int col = 0; col < cols; col++)
+            {
+                if (grid[row][col] == '1')
+                {
+                    dfs(row, col, grid);
+                    islands++;
+                }
+            }
+        }
+
+        return islands;
+    }
+};
+*/

@@ -4,7 +4,7 @@ using namespace std;
 
 void dfs(int node,const vector<vector<int>> &adj, vector<bool> &visited)
 {
-    // ark node as visited
+    // Mark node as visited
     visited[node] = true;
 
     // process node
@@ -23,6 +23,7 @@ void dfs(int node,const vector<vector<int>> &adj, vector<bool> &visited)
 void dfsTraversal(const vector<vector<int>> &adj)
 {
     int n = adj.size();
+
     vector<bool> visited(n, false);
 
     // Visit every connected component
@@ -33,6 +34,7 @@ void dfsTraversal(const vector<vector<int>> &adj)
             dfs(node, adj, visited);
         }
     }
+    
     cout << endl;
 }
 

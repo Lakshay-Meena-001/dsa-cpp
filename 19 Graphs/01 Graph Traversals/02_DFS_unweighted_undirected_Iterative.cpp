@@ -9,19 +9,13 @@ void dfsIterative(int source, const vector<vector<int>> &adj, vector<bool> &visi
     // Initial State
     st.push(source);
 
+    // visit current node
+    visited[source] = true;
+
     while (!st.empty())
     {
         int node = st.top();
         st.pop();
-
-        // skip it already visited
-        if (visited[node])
-        {
-            continue;
-        }
-
-        // visit current node
-        visited[node] = true;
 
         // process the node
         cout << node << " ";
@@ -33,6 +27,7 @@ void dfsIterative(int source, const vector<vector<int>> &adj, vector<bool> &visi
 
             if (!visited[neighbour])
             {
+                visited[neighbour] = true;
                 st.push(neighbour);
             }
         }
@@ -42,7 +37,7 @@ void dfsIterative(int source, const vector<vector<int>> &adj, vector<bool> &visi
 void dfsTraversal(const vector<vector<int>> &adj)
 {
     int n = adj.size();
-    
+
     vector<bool> visited(n, false);
 
     // Visit every connected component
