@@ -86,9 +86,7 @@ public:
     int dr[4] = {-1, 1, 0, 0};
     int dc[4] = {0, 0, -1, 1};
 
-    void dfs(int row,
-             int col,
-             vector<vector<char>>& grid)
+    void dfs(int row, int col,vector<vector<char>>& grid)
     {
         int rows = grid.size();
         int cols = grid[0].size();

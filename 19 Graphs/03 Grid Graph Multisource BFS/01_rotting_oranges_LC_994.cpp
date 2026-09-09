@@ -56,7 +56,7 @@ int orangesRotting(vector<vector<int>> &grid)
 
         while (size--)
         {
-            auto [row,col] = q.front();
+            auto [row, col] = q.front();
             q.pop();
 
             for (int i = 0; i < 4; i++)
@@ -64,11 +64,7 @@ int orangesRotting(vector<vector<int>> &grid)
                 int newRow = row + dr[i];
                 int newCol = col + dc[i];
 
-                if (newRow >= 0 &&
-                    newRow < rows &&
-                    newCol >= 0 &&
-                    newCol < cols &&
-                    grid[newRow][newCol] == 1)
+                if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols && grid[newRow][newCol] == 1)
                 {
                     grid[newRow][newCol] = 2;
 
