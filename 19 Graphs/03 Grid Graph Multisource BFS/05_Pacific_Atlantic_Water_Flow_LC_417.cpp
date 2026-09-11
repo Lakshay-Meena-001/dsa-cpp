@@ -85,7 +85,9 @@ vector<vector<int>> pacificAtlantic(vector<vector<int>> &heights)
         for (int j = 0; j < cols; j++)
         {
             if (pacific[i][j] && atlantic[i][j])
+            {
                 answer.push_back({i, j});
+            }
         }
     }
 

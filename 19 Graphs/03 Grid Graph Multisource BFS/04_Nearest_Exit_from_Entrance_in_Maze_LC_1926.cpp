@@ -47,8 +47,7 @@ int nearestExit(vector<vector<char>> &maze, vector<int> &entrance)
 
             // Check Exit
 
-            if (!(row == entrance[0] && col == entrance[1]) &&
-                (row == 0 || row == rows - 1 || col == 0 || col == cols - 1))
+            if (!(row == entrance[0] && col == entrance[1]) && (row == 0 || row == rows - 1 || col == 0 || col == cols - 1))
             {
                 return steps;
             }
@@ -60,11 +59,7 @@ int nearestExit(vector<vector<char>> &maze, vector<int> &entrance)
                 int newRow = row + dr[i];
                 int newCol = col + dc[i];
 
-                if (newRow >= 0 &&
-                    newRow < rows &&
-                    newCol >= 0 &&
-                    newCol < cols &&
-                    maze[newRow][newCol] == '.')
+                if (newRow >= 0 &&newRow < rows &&newCol >= 0 &&newCol < cols && maze[newRow][newCol] == '.')
                 {
                     maze[newRow][newCol] = '+';
 
