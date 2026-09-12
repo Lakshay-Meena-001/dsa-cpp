@@ -18,53 +18,56 @@ int nearestExit(vector<vector<char>> &maze, vector<int> &entrance)
 
     queue<pair<int, int>> q;
 
-    // Push Entrance
+    vector<vector<bool>> visited(rows, vector<bool>(cols, false));
 
+    int dr[4] = {-1, 1, 0, 0};
+    int dc[4] = {0, 0, -1, 1};
+
+    // Put entrance into queue
     q.push({entrance[0], entrance[1]});
 
-    // Mark as Visited
-
-    maze[entrance[0]][entrance[1]] = '+';
-
-    vector<int> dr = {-1, 1, 0, 0};
-    vector<int> dc = {0, 0, -1, 1};
+    visited[entrance[0]][entrance[1]] = true;
 
     int steps = 0;
-
-    // BFS
 
     while (!q.empty())
     {
         int size = q.size();
 
-        while (size--)
+        for (int i = 0; i < size; i++)
         {
-            auto current = q.front();
+            int row = q.front().first;
+            int col = q.front().second;
+
             q.pop();
 
-            int row = current.first;
-            int col = current.second;
-
-            // Check Exit
-
-            if (!(row == entrance[0] && col == entrance[1]) && (row == 0 || row == rows - 1 || col == 0 || col == cols - 1))
+            for (int k = 0; k < 4; k++)
             {
-                return steps;
-            }
+                int nr = row + dr[k];
+                int nc = col + dc[k];
 
-            // Visit Neighbours
+                // Boundary Check
+                if (nr < 0 || nr >= rows || nc < 0 || nc >= cols)
+                    continue;
 
-            for (int i = 0; i < 4; i++)
-            {
-                int newRow = row + dr[i];
-                int newCol = col + dc[i];
+                // Wall
+                if (maze[nr][nc] == '+')
+                    continue;
 
-                if (newRow >= 0 &&newRow < rows &&newCol >= 0 &&newCol < cols && maze[newRow][newCol] == '.')
+                // Already Visited
+                if (visited[nr][nc])
+                    continue;
+
+                // Exit Found
+                if (nr == 0 || nr == rows - 1 ||
+                    nc == 0 || nc == cols - 1)
                 {
-                    maze[newRow][newCol] = '+';
-
-                    q.push({newRow, newCol});
+                    return steps + 1;
                 }
+
+                visited[nr][nc] = true;
+
+                q.push({nr, nc});
             }
         }
 
