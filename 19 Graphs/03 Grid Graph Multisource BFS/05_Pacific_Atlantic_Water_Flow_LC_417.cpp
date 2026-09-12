@@ -124,6 +124,114 @@ int main()
 }
 
 /*
+class Solution
+{
+public:
+
+    int dr[4] = {-1,1,0,0};
+    int dc[4] = {0,0,-1,1};
+
+    void bfs(queue<pair<int,int>>& q,
+             vector<vector<int>>& heights,
+             vector<vector<bool>>& visited)
+    {
+        int rows = heights.size();
+        int cols = heights[0].size();
+
+        while(!q.empty())
+        {
+            auto [row,col] = q.front();
+            q.pop();
+
+            for(int k=0;k<4;k++)
+            {
+                int nr = row + dr[k];
+                int nc = col + dc[k];
+
+                if(nr<0 || nr>=rows || nc<0 || nc>=cols)
+                    continue;
+
+                if(visited[nr][nc])
+                    continue;
+
+                // Reverse Flow
+                if(heights[nr][nc] < heights[row][col])
+                    continue;
+
+                visited[nr][nc] = true;
+                q.push({nr,nc});
+            }
+        }
+    }
+
+    vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights)
+    {
+        int rows = heights.size();
+        int cols = heights[0].size();
+
+        vector<vector<bool>> pacific(rows, vector<bool>(cols,false));
+
+        vector<vector<bool>> atlantic(rows, vector<bool>(cols,false));
+
+        queue<pair<int,int>> pacificQueue;
+        queue<pair<int,int>> atlanticQueue;
+
+        // Pacific : Top Row
+        for(int col=0; col<cols; col++)
+        {
+            pacificQueue.push({0,col});
+            pacific[0][col] = true;
+        }
+
+        // Pacific : Left Column
+        for(int row=0; row<rows; row++)
+        {
+            if(!pacific[row][0])
+            {
+                pacificQueue.push({row,0});
+                pacific[row][0] = true;
+            }
+        }
+
+        // Atlantic : Bottom Row
+        for(int col=0; col<cols; col++)
+        {
+            atlanticQueue.push({rows-1,col});
+            atlantic[rows-1][col] = true;
+        }
+
+        // Atlantic : Right Column
+        for(int row=0; row<rows; row++)
+        {
+            if(!atlantic[row][cols-1])
+            {
+                atlanticQueue.push({row,cols-1});
+                atlantic[row][cols-1] = true;
+            }
+        }
+
+        bfs(pacificQueue, heights, pacific);
+        bfs(atlanticQueue, heights, atlantic);
+
+        vector<vector<int>> answer;
+
+        for(int i=0;i<rows;i++)
+        {
+            for(int j=0;j<cols;j++)
+            {
+                if(pacific[i][j] && atlantic[i][j])
+                {
+                    answer.push_back({i,j});
+                }
+            }
+        }
+
+        return answer;
+    }
+};
+*/
+
+/*
 DFS easy one
 class Solution
 {
@@ -166,6 +274,9 @@ public:
         }
     }
 }
+
+
+
 
 //---------------------------------------------------------
 // Main Function
