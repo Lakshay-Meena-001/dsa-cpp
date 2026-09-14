@@ -28,7 +28,6 @@ public:
 
             if (x > 0)
             {
-
                 // Positive ko next positive slot par rakho.
                 ans[positiveIndex] = x;
 
@@ -37,7 +36,6 @@ public:
             }
             else
             {
-
                 // Negative ko next negative slot par rakho.
                 ans[negativeIndex] = x;
 
