@@ -2,9 +2,11 @@
 
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    void sortColors(vector<int>& nums) {
+    void sortColors(vector<int> &nums)
+    {
 
         // low = next position where a 0 should go.
         int low = 0;
@@ -17,10 +19,12 @@ public:
 
         // Jab tak UNKNOWN region exist karta hai,
         // tab tak processing continue karni hai.
-        while (mid <= high) {
+        while (mid <= high)
+        {
 
             // Current unknown element check karo.
-            if (nums[mid] == 0) {
+            if (nums[mid] == 0)
+            {
 
                 // 0 ko left/0-region mein bhejo.
                 swap(nums[low], nums[mid]);
@@ -31,16 +35,16 @@ public:
                 // mid par bhi ab known element aa gaya,
                 // isliye next unknown element par move kar sakte hain.
                 mid++;
-
             }
-            else if (nums[mid] == 1) {
+            else if (nums[mid] == 1)
+            {
 
                 // 1 already middle region mein belong karta hai.
                 // Isliye sirf unknown scanner ko aage badhao.
                 mid++;
-
             }
-            else { // nums[mid] == 2
+            else
+            { // nums[mid] == 2
 
                 // 2 ko right/2-region mein bhejo.
                 swap(nums[mid], nums[high]);
@@ -58,7 +62,8 @@ public:
     }
 };
 
-int main() {
+int main()
+{
 
     vector<int> nums = {2, 0, 2, 1, 1, 0};
 
@@ -66,7 +71,8 @@ int main() {
     obj.sortColors(nums);
 
     // Final sorted array print karo.
-    for (int x : nums) {
+    for (int x : nums)
+    {
         cout << x << " ";
     }
 
