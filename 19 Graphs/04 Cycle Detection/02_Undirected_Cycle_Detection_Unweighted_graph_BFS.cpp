@@ -7,11 +7,12 @@ using namespace std;
 // BFS Function
 bool bfs(int start, const vector<vector<int>> &adj, vector<bool> &visited)
 {
-    // Queue stores (node, parent)
+    // Queue stores (node, parent), dfs m recursion m parent sath m bhejte the yaha pair use karenge
     queue<pair<int, int>> q;
 
     visited[start] = true;
 
+    // to staring node ka parent koi nahi hai isliye -1
     q.push({start, -1});
 
     while (!q.empty())
@@ -80,9 +81,25 @@ int main()
     }
 
     if (hasCycle)
+    {
         cout << "Cycle Found";
+    }
     else
+    {
         cout << "No Cycle";
+    }
 
     return 0;
 }
+
+/*
+| DFS                            | BFS                            |
+| ------------------------------ | ------------------------------ |
+| Recursive call                 | Queue                          |
+| Parent function parameter      | Parent inside queue pair       |
+| `dfs(neighbour,node)`          | `q.push({neighbour,node})`     |
+| Recursion stack                | Queue                          |
+| Same `visited` array           | Same `visited` array           |
+| Same `neighbor != parent` rule | Same `neighbor != parent` rule |
+
+*/

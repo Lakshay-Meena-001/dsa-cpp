@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// problem kya hai ki hum path m cycle ki wajah se directed graph m ghum kar kisi top node m aa gaye, ab pichle problem m kya tha ki ycl edetect karne k liye visited neighbour ho or parent n aho yah awo fail kar jata hai
 bool dfs(int node, const vector<vector<int>> &adj, vector<bool> &visited, vector<bool> &pathVisited)
 {
     // Node visited permanently
@@ -14,7 +15,7 @@ bool dfs(int node, const vector<vector<int>> &adj, vector<bool> &visited, vector
     // Explore neighbours
     for (int neighbour : adj[node])
     {
-        // New node
+        // New node mili hai check karo
         if (!visited[neighbour])
         {
             if (dfs(neighbour, adj, visited, pathVisited))
@@ -23,14 +24,14 @@ bool dfs(int node, const vector<vector<int>> &adj, vector<bool> &visited, vector
             }
         }
 
-        // Already present in current DFS path
+        // Already present in current DFS path matlab ye whi patch chal rah ahi and hum wapis uski kisi node par aa gye 
         else if (pathVisited[neighbour])
         {
             return true;
         }
     }
 
-    // Remove from current DFS path
+    // Remove from current DFS path for next new dfs path
     pathVisited[node] = false;
 
     return false;

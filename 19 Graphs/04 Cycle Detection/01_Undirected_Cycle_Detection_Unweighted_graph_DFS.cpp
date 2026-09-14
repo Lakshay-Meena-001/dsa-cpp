@@ -12,17 +12,20 @@ bool dfs(int node, int parent, const vector<vector<int>> &adj, vector<bool> &vis
     // Step 2 : Visit all neighbours
     for (int neighbour : adj[node])
     {
-        // Case 1 : Not visited
+        // Case 1 : Neighbour visited nahi hai
         if (!visited[neighbour])
         {
-            // Explore neighbour
+            // Explore neighbour ki agar neighbour par dsa se cycle mil gyi ans propagate hota hai
+            /*
+            Agar tumne us return value ko ignore kar diya, to node 2 ko kabhi pata hi nahi chalega ki cycle mil chuki hai. Wo baaki neighbours dekhne lagega aur final answer galat ho sakta hai.
+            Isliye recursive call ka result capture aur propagate karna zaroori hai.*/
             if (dfs(neighbour, node, adj, visited))
             {
                 return true;
             }
         }
 
-        // Case 2 : Already visited & Parent nahi hai
+        // Case 2 :Neighbour already visited hai and wo parent bhi nahi hai kyuki undirected graph hai
         else if (neighbour != parent)
         {
             return true;
@@ -85,3 +88,37 @@ int main()
 
     return 0;
 }
+
+/*
+DFS(node, parent)
+
+↓
+
+Mark Visited
+
+↓
+
+For every neighbour
+
+    Not Visited ?
+
+        DFS
+
+        True?
+
+            Return True
+
+    Else
+
+        Parent?
+
+            Ignore
+
+        Not Parent?
+
+            Cycle
+
+↓
+
+Return False
+*/

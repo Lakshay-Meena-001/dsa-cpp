@@ -9,8 +9,7 @@ using namespace std;
 // Time Complexity : O(V + E)
 // Space Complexity : O(V + E)
 
-bool canFinish(int numCourses,
-               vector<vector<int>>& prerequisites)
+bool canFinish(int numCourses, vector<vector<int>> &prerequisites)
 {
     vector<vector<int>> adj(numCourses);
 
@@ -72,9 +71,8 @@ int main()
     int numCourses = 2;
 
     vector<vector<int>> prerequisites =
-    {
-        {1, 0}
-    };
+        {
+            {1, 0}};
 
     if (canFinish(numCourses, prerequisites))
     {

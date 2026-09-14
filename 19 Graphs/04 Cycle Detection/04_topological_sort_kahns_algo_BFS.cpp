@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// kahns algo work karta hai prerequisites par 
 vector<int> kahnTopoSort(int V, const vector<vector<int>>& adj)
 {
     // Step 1 : Calculate Indegree
