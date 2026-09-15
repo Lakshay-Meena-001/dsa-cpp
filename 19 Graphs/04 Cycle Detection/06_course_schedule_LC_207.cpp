@@ -70,9 +70,7 @@ int main()
 {
     int numCourses = 2;
 
-    vector<vector<int>> prerequisites =
-        {
-            {1, 0}};
+    vector<vector<int>> prerequisites = {{1, 0}};
 
     if (canFinish(numCourses, prerequisites))
     {

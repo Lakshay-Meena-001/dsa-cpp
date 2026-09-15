@@ -42,7 +42,7 @@ int longestCycle(vector<int> &edges)
 
             step++;
 
-            // next nod epar move karo like adjacency list ki tarah se no loop because ek outgoing edge hai 
+            // next node par move karo like adjacency list ki tarah se chaninki ki tarah ki is node ke aag ekis node par jaa skte hai then so on, no loop because ek outgoing edge hai 
             
             node = edges[node];
         }

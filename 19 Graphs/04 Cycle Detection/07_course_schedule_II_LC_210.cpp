@@ -9,8 +9,7 @@ using namespace std;
 // Time Complexity : O(V + E)
 // Space Complexity : O(V + E)
 
-
-vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites)
+vector<int> findOrder(int numCourses, vector<vector<int>> &prerequisites)
 {
     vector<vector<int>> adj(numCourses);
     vector<int> indegree(numCourses, 0);
@@ -42,11 +41,14 @@ vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites)
 
     // Kahn's BFS
 
+    int count = 0;
+
     while (!q.empty())
     {
         int node = q.front();
         q.pop();
 
+        count++;
         order.push_back(node);
 
         for (int neighbour : adj[node])
@@ -62,7 +64,7 @@ vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites)
 
     // Cycle Check
 
-    if (order.size() == numCourses)
+    if (count == numCourses)
     {
         return order;
     }
@@ -77,12 +79,11 @@ int main()
     int numCourses = 4;
 
     vector<vector<int>> prerequisites =
-    {
-        {1, 0},
-        {2, 0},
-        {3, 1},
-        {3, 2}
-    };
+        {
+            {1, 0},
+            {2, 0},
+            {3, 1},
+            {3, 2}};
 
     vector<int> order = findOrder(numCourses, prerequisites);
 
