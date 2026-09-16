@@ -4,7 +4,6 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
 class Solution
 {
 public:
@@ -26,17 +25,15 @@ public:
 
     bool validPalindrome(string s)
     {
-        int left = 0;             // Left pointer
-        int right = s.size() - 1; // Right pointer
+        int left = 0;
+        int right = s.size() - 1;
 
         while (left < right)
         {
             if (s[left] != s[right])
             {
-
                 // Mismatch: left ya right me se ek delete karo
-                return isPalindrome(s, left + 1, right) ||
-                       isPalindrome(s, left, right - 1);
+                return isPalindrome(s, left + 1, right) || isPalindrome(s, left, right - 1);
             }
 
             left++;
