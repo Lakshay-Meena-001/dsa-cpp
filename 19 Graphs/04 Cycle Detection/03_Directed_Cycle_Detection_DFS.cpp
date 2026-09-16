@@ -24,14 +24,14 @@ bool dfs(int node, const vector<vector<int>> &adj, vector<bool> &visited, vector
             }
         }
 
-        // Already present in current DFS path matlab ye whi patch chal rah ahi and hum wapis uski kisi node par aa gye 
+        // Already present in current DFS path matlab ye whi path chal raha hai and hum wapis uski kisi node par aa gye 
         else if (pathVisited[neighbour])
         {
             return true;
         }
     }
 
-    // Remove from current DFS path for next new dfs path
+    // Remove from current DFS visitedpath for next/ new dfs call
     pathVisited[node] = false;
 
     return false;
