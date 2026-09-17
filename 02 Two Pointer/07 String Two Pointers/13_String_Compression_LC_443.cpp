@@ -19,8 +19,7 @@ public:
             int count = 0;
 
             // Current character ka complete group count karo
-            while (read < chars.size() &&
-                   chars[read] == current)
+            while (read < chars.size() && chars[read] == current)
             {
                 read++;
                 count++;
