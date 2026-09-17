@@ -4,12 +4,14 @@
 using namespace std;
 
 void nextPermutation(vector<int>& nums) {
+
     int n = nums.size();
 
-    // Step 1: Right se first increasing pair find karo
+    // Step 1: Right se first increasing pair find karo why i-2 kyuki i ko uske pichle element se compare karna hai reverse direction m jaate hue
     int i = n - 2;
 
-    while (i >= 0 && nums[i] >= nums[i + 1]) {
+    while (i >= 0 && nums[i] >= nums[i + 1])
+     {
         i--;
     }
 
@@ -30,7 +32,8 @@ void nextPermutation(vector<int>& nums) {
     reverse(nums.begin() + i + 1, nums.end());
 }
 
-int main() {
+int main()
+{
     vector<int> nums = {1, 2, 7, 4, 3, 1};
 
     nextPermutation(nums);
