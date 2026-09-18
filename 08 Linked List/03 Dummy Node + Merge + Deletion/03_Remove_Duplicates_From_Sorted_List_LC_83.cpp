@@ -1,21 +1,21 @@
 #include <iostream>
 using namespace std;
 
-struct Node
+struct ListNode
 {
     int data;
-    Node *next;
+    ListNode *next;
 
-    Node(int value)
+    ListNode(int value)
     {
         data = value;
         next = NULL;
     }
 };
 
-Node *removeDuplicates(Node *head)
+ListNode *removeDuplicates(ListNode *head)
 {
-    Node *current = head;
+    ListNode *current = head;
 
     while (current != NULL && current->next != NULL)
     {
@@ -36,7 +36,7 @@ Node *removeDuplicates(Node *head)
     return head;
 }
 
-void printList(Node *head)
+void printList(ListNode *head)
 {
     while (head != NULL)
     {
@@ -50,13 +50,13 @@ void printList(Node *head)
 int main()
 {
     // 1 -> 1 -> 2 -> 3 -> 3 -> 3 -> 4
-    Node *head = new Node(1);
-    head->next = new Node(1);
-    head->next->next = new Node(2);
-    head->next->next->next = new Node(3);
-    head->next->next->next->next = new Node(3);
-    head->next->next->next->next->next = new Node(3);
-    head->next->next->next->next->next->next = new Node(4);
+    ListNode *head = new ListNode(1);
+    head->next = new ListNode(1);
+    head->next->next = new ListNode(2);
+    head->next->next->next = new ListNode(3);
+    head->next->next->next->next = new ListNode(3);
+    head->next->next->next->next->next = new ListNode(3);
+    head->next->next->next->next->next->next = new ListNode(4);
 
     cout << "Original List:\n";
     printList(head);

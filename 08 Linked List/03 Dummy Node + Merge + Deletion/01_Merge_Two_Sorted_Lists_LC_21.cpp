@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-struct Node
+struct ListNode
 {
     int data;
-    Node *next;
+    ListNode *next;
 
-    Node(int value)
+    ListNode(int value)
     {
         data = value;
         next = NULL;
@@ -14,13 +14,13 @@ struct Node
 };
 
 // Merge two sorted linked lists
-Node *mergeTwoLists(Node *l1, Node *l2)
+ListNode *mergeTwoLists(ListNode *l1, ListNode *l2)
 {
     // Dummy node: final list ka fake starting point
-    Node *dummy = new Node(0);
+    ListNode *dummy = new ListNode(0);
 
     // Tail final merged list ke last node ko track karega
-    Node *tail = dummy;
+    ListNode *tail = dummy;
 
     while (l1 != NULL && l2 != NULL)
     {
@@ -52,14 +52,14 @@ Node *mergeTwoLists(Node *l1, Node *l2)
     }
 
     // Dummy ke baad actual answer hai
-    Node *result = dummy->next;
+    ListNode *result = dummy->next;
 
     delete dummy;
 
     return result;
 }
 
-void printList(Node *head)
+void printList(ListNode *head)
 {
     while (head != NULL)
     {
@@ -73,16 +73,16 @@ void printList(Node *head)
 int main()
 {
     // List 1: 1 -> 3 -> 5
-    Node *l1 = new Node(1);
-    l1->next = new Node(3);
-    l1->next->next = new Node(5);
+    ListNode *l1 = new ListNode(1);
+    l1->next = new ListNode(3);
+    l1->next->next = new ListNode(5);
 
     // List 2: 2 -> 4 -> 6
-    Node *l2 = new Node(2);
-    l2->next = new Node(4);
-    l2->next->next = new Node(6);
+    ListNode *l2 = new ListNode(2);
+    l2->next = new ListNode(4);
+    l2->next->next = new ListNode(6);
 
-    Node *merged = mergeTwoLists(l1, l2);
+    ListNode *merged = mergeTwoLists(l1, l2);
 
     cout << "Merged List:\n";
     printList(merged);

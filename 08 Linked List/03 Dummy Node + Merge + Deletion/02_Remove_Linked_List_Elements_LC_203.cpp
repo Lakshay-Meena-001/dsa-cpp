@@ -1,26 +1,26 @@
 #include <iostream>
 using namespace std;
 
-struct Node
+struct ListNode
 {
     int data;
-    Node *next;
+    ListNode *next;
 
-    Node(int value)
+    ListNode(int value)
     {
         data = value;
         next = NULL;
     }
 };
 
-Node *removeElements(Node *head, int val)
+ListNode *removeElements(ListNode *head, int val)
 {
     // Dummy node: head deletion ko normal deletion bana deta hai
-    Node *dummy = new Node(0);
+    ListNode *dummy = new ListNode(0);
     dummy->next = head;
 
     // Current previous node ko represent karega
-    Node *current = dummy;
+    ListNode *current = dummy;
 
     while (current->next != NULL)
     {
@@ -37,14 +37,14 @@ Node *removeElements(Node *head, int val)
         }
     }
 
-    Node *result = dummy->next;
+    ListNode *result = dummy->next;
 
     delete dummy;
 
     return result;
 }
 
-void printList(Node *head)
+void printList(ListNode *head)
 {
     while (head != NULL)
     {
@@ -58,13 +58,13 @@ void printList(Node *head)
 int main()
 {
     // 1 -> 2 -> 6 -> 3 -> 4 -> 6 -> 5
-    Node *head = new Node(1);
-    head->next = new Node(2);
-    head->next->next = new Node(6);
-    head->next->next->next = new Node(3);
-    head->next->next->next->next = new Node(4);
-    head->next->next->next->next->next = new Node(6);
-    head->next->next->next->next->next->next = new Node(5);
+    ListNode *head = new ListNode(1);
+    head->next = new ListNode(2);
+    head->next->next = new ListNode(6);
+    head->next->next->next = new ListNode(3);
+    head->next->next->next->next = new ListNode(4);
+    head->next->next->next->next->next = new ListNode(6);
+    head->next->next->next->next->next->next = new ListNode(5);
 
     int val = 6;
 
