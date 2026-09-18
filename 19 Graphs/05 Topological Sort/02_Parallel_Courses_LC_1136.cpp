@@ -43,7 +43,6 @@ public:
 
         while (!q.empty())
         {
-
             semesters++;
 
             int size = q.size();
@@ -71,7 +70,9 @@ public:
 
         // 6. Cycle detection
         if (completed == n)
+        {
             return semesters;
+        }
 
         return -1;
     }
