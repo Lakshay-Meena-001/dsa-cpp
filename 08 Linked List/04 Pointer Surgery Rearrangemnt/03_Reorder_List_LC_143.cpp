@@ -66,12 +66,14 @@ void reorderList(Node *head)
 
     while (second != nullptr)
     {
+        // taki pointer vonnect karne par list lost na ho to aage k pointers ko save karo
         Node *firstNext = first->next;
         Node *secondNext = second->next;
 
         first->next = second;
         second->next = firstNext;
 
+        // pointers ko new values par daldo same operation k liye
         first = firstNext;
         second = secondNext;
     }
