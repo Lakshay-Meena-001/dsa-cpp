@@ -30,8 +30,7 @@ Node* mergeNodes(Node* head)
     {
         if (current->data == 0)
         {
-            // Segment complete ho gaya
-            // Sum ko ek new node mein store karo
+            // Segment complete ho gaya Sum ko ek new node mein store karo
             if (sum != 0)
             {
                 tail->next = new Node(sum);
