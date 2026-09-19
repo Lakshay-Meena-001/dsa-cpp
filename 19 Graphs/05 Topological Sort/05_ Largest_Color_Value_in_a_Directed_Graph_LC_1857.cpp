@@ -9,11 +9,10 @@ public:
 
         int n = colors.size();
 
-        // 1. Build graph + indegree
-
         vector<vector<int>> graph(n);
         vector<int> indegree(n, 0);
 
+        // Build graph
         for (auto &edge : edges)
         {
             int u = edge[0];
@@ -23,28 +22,26 @@ public:
             indegree[v]++;
         }
 
-        // 2. DP
-        // dp[u][c] = maximum count of color c
-        // on a path ending at node u
-
         vector<vector<int>> dp(n, vector<int>(26, 0));
-
-        // 3. Kahn's Algorithm
 
         queue<int> q;
 
+        // Initialize source nodes
         for (int i = 0; i < n; i++)
         {
+
             if (indegree[i] == 0)
             {
+
                 q.push(i);
+
+                // Starting node contributes its own color
+                dp[i][colors[i] - 'a'] = 1;
             }
         }
 
         int processed = 0;
         int answer = 0;
-
-        // 4. Topological BFS + DP
 
         while (!q.empty())
         {
@@ -54,30 +51,26 @@ public:
 
             processed++;
 
-            // Node u contributes its own color
-            int colorIndex = colors[u] - 'a';
-            dp[u][colorIndex]++;
-
-            // Current best answer from node u
+            // Check answer
             for (int c = 0; c < 26; c++)
             {
                 answer = max(answer, dp[u][c]);
             }
 
-            // Send DP information to neighbours
-
+            // u → v
             for (int v : graph[u])
             {
+
                 for (int c = 0; c < 26; c++)
                 {
 
                     int extra = (colors[v] - 'a' == c);
 
-                    dp[v][c] = max(dp[v][c], dp[u][c] + extra);
+                    dp[v][c] = max(
+                        dp[v][c],
+                        dp[u][c] + extra);
                 }
 
-                // u is completed,
-                // so one dependency of v is removed
                 indegree[v]--;
 
                 if (indegree[v] == 0)
@@ -87,8 +80,7 @@ public:
             }
         }
 
-        // 5. Cycle detection
-
+        // Not all nodes processed => cycle
         if (processed != n)
         {
             return -1;
