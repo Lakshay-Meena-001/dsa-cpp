@@ -35,7 +35,7 @@ Node *swapKthNodes(Node *head, int k)
     Node *slow = head;
     Node *fast = head;
 
-    // Create a gap of k nodes
+    // Create a gap of k nodes matlab ye last se k k liye kyuki ye k ka ek gap bana dega 
     for (int i = 0; i < k; i++)
     {
         fast = fast->next;
