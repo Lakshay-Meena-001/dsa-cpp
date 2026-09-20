@@ -16,10 +16,14 @@ struct Node
 Node *deleteNAfterM(Node *head, int M, int N)
 {
     if (head == nullptr || M <= 0)
+    {
         return nullptr;
+    }
 
     if (N <= 0)
+    {
         return head;
+    }
 
     Node *current = head;
 
@@ -33,7 +37,9 @@ Node *deleteNAfterM(Node *head, int M, int N)
 
         // M nodes keep karne ke baad list khatam
         if (current == nullptr)
+        {
             break;
+        }
 
         // Step 2: Next N nodes skip/delete
         Node *temp = current->next;
