@@ -41,7 +41,11 @@ ListNode *addOneReverse(ListNode *head)
 
     while (curr != nullptr && carry != 0)
     {
-        int sum = curr->val + carry;
+        // curent int value
+        int x = curr->val;
+
+        // sum of current and carry
+        int sum = x + carry;
 
         // Current digit store karo
         curr->val = sum % 10;
@@ -49,8 +53,7 @@ ListNode *addOneReverse(ListNode *head)
         // Next position ke liye carry
         carry = sum / 10;
 
-        // Agar carry abhi bhi hai aur last node aa gayi hai
-        // to extra node banani padegi
+        // Agar carry abhi bhi hai aur last node aa gayi hai, to extra node banani padegi
         if (carry != 0 && curr->next == nullptr)
         {
             curr->next = new ListNode(0);
@@ -71,7 +74,9 @@ int addOneRecursiveHelper(ListNode *node)
     // List ke end tak pahunch gaye
     // Yahin se 1 carry ke form mein wapas jayega
     if (node == nullptr)
+    {
         return 1;
+    }
 
     // Pehle rightmost digit process hogi
     int carry = addOneRecursiveHelper(node->next);
