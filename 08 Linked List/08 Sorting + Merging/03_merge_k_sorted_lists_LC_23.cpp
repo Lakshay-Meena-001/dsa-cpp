@@ -23,7 +23,7 @@ public:
         ListNode *tail = &dummy;
 
         while (a != nullptr && b != nullptr)
-        {`
+        {
             if (a->data <= b->data)
             {
                 tail->next = a;
