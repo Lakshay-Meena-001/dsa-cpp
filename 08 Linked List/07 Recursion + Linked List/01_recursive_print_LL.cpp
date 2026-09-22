@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
 
-struct Node
+struct ListNode
 {
     int data;
-    Node *next;
+    ListNode *next;
 
-    Node(int data)
+    ListNode(int data)
     {
         this->data = data;
         this->next = nullptr;
     }
 };
 
-void printRecursive(Node *head)
+void printRecursive(ListNode *head)
 {
     // base case
     if (head == nullptr)
@@ -29,10 +29,10 @@ void printRecursive(Node *head)
 
 int main()
 {
-    Node *head = new Node(10);
-    head->next = new Node(20);
-    head->next->next = new Node(30);
-    head->next->next->next = new Node(40);
+    ListNode *head = new ListNode(10);
+    head->next = new ListNode(20);
+    head->next->next = new ListNode(30);
+    head->next->next->next = new ListNode(40);
 
     printRecursive(head);
 

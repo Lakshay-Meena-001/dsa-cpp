@@ -1,41 +1,44 @@
 #include <iostream>
 using namespace std;
 
-struct Node
+struct ListNode
 {
     int data;
-    Node *next;
+    ListNode *next;
 
-    Node(int data)
+    ListNode(int data)
     {
         this->data = data;
         this->next = nullptr;
     }
 };
 
-Node *insertRecursive(Node *head, int pos, int value)
+ListNode *insertRecursive(ListNode *current, int pos, int value)
 {
-    // Base case remember ki recursion m LL ki indexing 0 se start hoti hai 
+    //remember ki recursion m LL ki indexing 0 se start hoti hai
+    // Base case
     if (pos == 0)
     {
-        Node *newNode = new Node(value);
-        newNode->next = head;
-        return newNode;
+        ListNode *newListNode = new ListNode(value);
+
+        newListNode->next = current;
+
+        return newListNode;
     }
 
     // Invalid position
-    if (head == nullptr)
+    if (current == nullptr)
     {
-        return head;
+        return current;
     }
 
-    // Recursive case
-    head->next = insertRecursive(head->next, pos - 1, value);
+    // Move to next Listnode
+    current->next = insertRecursive(current->next, pos - 1, value);
 
-    return head;
+    return current;
 }
 
-void printList(Node *head)
+void printList(ListNode *head)
 {
     while (head != nullptr)
     {
@@ -48,10 +51,10 @@ void printList(Node *head)
 
 int main()
 {
-    Node *head = new Node(10);
-    head->next = new Node(20);
-    head->next->next = new Node(30);
-    head->next->next->next = new Node(40);
+    ListNode *head = new ListNode(10);
+    head->next = new ListNode(20);
+    head->next->next = new ListNode(30);
+    head->next->next->next = new ListNode(40);
 
     cout << "Before: ";
     printList(head);
