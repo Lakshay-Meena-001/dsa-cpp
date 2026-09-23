@@ -2,14 +2,14 @@
 #include <unordered_map>
 using namespace std;
 
-// Node structure
-struct Node
+// ListNode structure
+struct ListNode
 {
     int val;
-    Node *next;
-    Node *random;
+    ListNode *next;
+    ListNode *random;
 
-    Node(int val)
+    ListNode(int val)
     {
         this->val = val;
         next = NULL;
@@ -21,22 +21,22 @@ struct Node
 // Time  : O(n)
 // Space : O(n)
 
-Node *copyRandomListHashMap(Node *head)
+ListNode *copyRandomListHashMap(ListNode *head)
 {
     if (head == NULL)
     {
         return NULL;
     }
 
-    unordered_map<Node *, Node *> mp;
+    unordered_map<ListNode *, ListNode *> mp;
 
     // Step 1: Create copy of every node
-    Node *curr = head;
+    ListNode *curr = head;
 
     while (curr != NULL)
     {
-        // jo current node(address not value, Node* ->Node*) hai uski maping new node k sath
-        mp[curr] = new Node(curr->val);
+        // jo current node(address not value, ListNode* ->ListNode*) hai uski maping new node k sath
+        mp[curr] = new ListNode(curr->val);
         curr = curr->next;
     }
 
@@ -69,7 +69,7 @@ Node *copyRandomListHashMap(Node *head)
 // Time  : O(n)
 // Space : O(1) extra space
 
-Node *copyRandomListInterweaving(Node *head)
+ListNode *copyRandomListInterweaving(ListNode *head)
 {
     if (head == NULL)
     {
@@ -84,11 +84,11 @@ Node *copyRandomListInterweaving(Node *head)
     // Becomes:
     // A -> A' -> B -> B' -> C -> C'
 
-    Node *curr = head;
+    ListNode *curr = head;
 
     while (curr != NULL)
     {
-        Node *copy = new Node(curr->val);
+        ListNode *copy = new ListNode(curr->val);
 
         // to avoid list
         copy->next = curr->next;
@@ -109,7 +109,7 @@ Node *copyRandomListInterweaving(Node *head)
 
     while (curr != NULL)
     {
-        Node *copy = curr->next;
+        ListNode *copy = curr->next;
 
         if (curr->random != NULL)
         {
@@ -124,30 +124,34 @@ Node *copyRandomListInterweaving(Node *head)
     }
 
     // Step 3: Separate original and copied lists
-    
+
     // A -> A' -> B -> B' -> C -> C'
-    
+
     // Becomes:
-    
+
     // Original: A -> B -> C
     // Copy:     A' -> B' -> C'
 
     curr = head;
 
-    Node *copyHead = head->next;
+    ListNode *copyHead = head->next;
 
     while (curr != NULL)
     {
-        Node *copy = curr->next;
+        ListNode *copy = curr->next;
 
         // Restore original list
         curr->next = copy->next;
 
         // Connect copied list
         if (copy->next != NULL)
+        {
             copy->next = copy->next->next;
+        }
         else
+        {
             copy->next = NULL;
+        }
 
         curr = curr->next;
     }
@@ -155,22 +159,24 @@ Node *copyRandomListInterweaving(Node *head)
     return copyHead;
 }
 
-// ============================================================
 // PRINT LINKED LIST
-// ============================================================
 
-void printList(Node *head)
+void printList(ListNode *head)
 {
-    Node *curr = head;
+    ListNode *curr = head;
 
     while (curr != NULL)
     {
-        cout << "Node: " << curr->val;
+        cout << "ListNode: " << curr->val;
 
         if (curr->random != NULL)
+        {
             cout << ", Random: " << curr->random->val;
+        }
         else
+        {
             cout << ", Random: NULL";
+        }
 
         cout << endl;
 
@@ -180,27 +186,22 @@ void printList(Node *head)
     cout << endl;
 }
 
-// ============================================================
 // DELETE LINKED LIST
-// ============================================================
 
-void deleteList(Node *head)
+void deleteList(ListNode *head)
 {
     while (head != NULL)
     {
-        Node *temp = head;
+        ListNode *temp = head;
         head = head->next;
         delete temp;
     }
 }
 
-// ============================================================
 // MAIN
-// ============================================================
 
 int main()
 {
-    // --------------------------------------------------------
     // Create original linked list
     //
     // 1 -> 2 -> 3 -> NULL
@@ -209,11 +210,10 @@ int main()
     // 1 -> 3
     // 2 -> 1
     // 3 -> 2
-    // --------------------------------------------------------
 
-    Node *head = new Node(1);
-    head->next = new Node(2);
-    head->next->next = new Node(3);
+    ListNode *head = new ListNode(1);
+    head->next = new ListNode(2);
+    head->next->next = new ListNode(3);
 
     head->random = head->next->next;       // 1 -> 3
     head->next->random = head;             // 2 -> 1
@@ -222,27 +222,21 @@ int main()
     cout << "Original List:\n";
     printList(head);
 
-    // --------------------------------------------------------
     // APPROACH 1: HASHMAP
-    // --------------------------------------------------------
 
-    Node *copy1 = copyRandomListHashMap(head);
+    ListNode *copy1 = copyRandomListHashMap(head);
 
     cout << "Copy using HashMap:\n";
     printList(copy1);
 
-    // --------------------------------------------------------
     // APPROACH 2: INTERWEAVING
-    // --------------------------------------------------------
 
-    Node *copy2 = copyRandomListInterweaving(head);
+    ListNode *copy2 = copyRandomListInterweaving(head);
 
     cout << "Copy using Interweaving:\n";
     printList(copy2);
 
-    // --------------------------------------------------------
     // Cleanup
-    // --------------------------------------------------------
 
     deleteList(head);
     deleteList(copy1);
