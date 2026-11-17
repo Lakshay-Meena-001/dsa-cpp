@@ -23,18 +23,19 @@ void printPattern(int rows)
 {
     for (int i = 0; i < rows; i++)
     {
-        // Step 2: print leading spaces
         for (int j = 0; j < rows - i - 1; j++)
+        {
             cout << "  ";
+        }
 
         char ch = 'A';
-        int breakPoint = (2 * i + 1) / 2;
+        int breakPoint = i + 1;
 
-        // Step 3 & 4: print ascending and descending characters
         for (int j = 1; j <= 2 * i + 1; j++)
         {
             cout << ch << " ";
-            if (j <= breakPoint)
+
+            if (j < breakPoint)
             {
                 ch++;
             }
@@ -44,7 +45,6 @@ void printPattern(int rows)
             }
         }
 
-        // Step 5: move to next line
         cout << endl;
     }
 }

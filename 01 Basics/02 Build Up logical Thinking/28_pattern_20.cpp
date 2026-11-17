@@ -28,9 +28,13 @@ void printPattern(int rows, int cols)
         for (int j = 1; j <= cols; j++)
         {
             if (i == 1 || j == 1 || i == rows || j == cols)
+            {
                 cout << "*" << " ";
+            }
             else
+            {
                 cout << "  ";
+            }
         }
         cout << '\n';
     }

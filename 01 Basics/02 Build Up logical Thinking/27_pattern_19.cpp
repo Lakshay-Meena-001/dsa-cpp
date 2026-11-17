@@ -29,31 +29,33 @@ Logic/Steps:
 
 void printPattern(int rows)
 {
-    int sp = 2 * rows - 2;
+    if (rows <= 0)
+        return;
 
     for (int i = 1; i <= 2 * rows - 1; i++)
     {
         int stars = (i <= rows) ? i : 2 * rows - i;
+        int spaces = 2 * (rows - stars);
 
         // Left stars
         for (int j = 1; j <= stars; j++)
+        {
             cout << '*';
+        }
 
         // Middle spaces
-        for (int j = 1; j <= sp; j++)
+        for (int j = 1; j <= spaces; j++)
+        {
             cout << ' ';
+        }
 
         // Right stars
         for (int j = 1; j <= stars; j++)
+        {
             cout << '*';
+        }
 
         cout << '\n';
-
-        // Adjust spaces
-        if (i < rows)
-            sp -= 2;
-        else
-            sp += 2;
     }
 }
 

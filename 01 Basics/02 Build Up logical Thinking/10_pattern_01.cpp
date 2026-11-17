@@ -2,20 +2,20 @@
 using namespace std;
 
 /*
-    ==============================================================
-                             PATTERN LOGIC – SHORTCUT
-    ==============================================================
-    1️⃣ Step 1: Count number of rows (outer loop)
-    2️⃣ Step 2: Count number of columns or elements in each row (inner loop)
-    3️⃣ Step 3: Decide what to print (*, numbers, spaces, etc.)
-    4️⃣ Step 4: Observe symmetry, increasing/decreasing values
-    5️⃣ Step 5: Use conditions in inner loop for advanced patterns
+
+    PATTERN LOGIC – SHORTCUT
+
+    Step 1: Count number of rows (outer loop)
+    Step 2: Count number of columns or elements in each row (inner loop)
+    Step 3: Decide what to print (*, numbers, spaces, etc.)
+    Step 4: Observe symmetry, increasing/decreasing values
+    Step 5: Use conditions in inner loop for advanced patterns
 
     ⭐ Interview Tip:
     - Outer loop = row count
     - Inner loop = content of each row
     - Use formula or condition for numbers/spaces
-    ==============================================================
+
 */
 
 // ----------------- SIMPLE RECTANGLE PATTERN -----------------
@@ -34,9 +34,9 @@ void rectanglePattern(int rows, int cols)
         Example:
         rows = 3, cols = 4
         Output:
-        * * * * 
-        * * * * 
-        * * * * 
+        * * * *
+        * * * *
+        * * * *
     */
 }
 
@@ -56,22 +56,24 @@ void rightAngledTriangle(int n)
         Example:
         n = 4
         Output:
-        * 
-        * * 
-        * * * 
-        * * * * 
+        *
+        * *
+        * * *
+        * * * *
     */
 }
 
 // ----------------- INVERTED TRIANGLE PATTERN -----------------
 void invertedTriangle(int n)
 {
-    for (int i = n; i >= 1; i--) // row count
+
+    for (int i = 1; i <= n; i++) // Rows
     {
-        for (int j = 1; j <= i; j++) // elements in row
+        for (int j = 1; j <= n - i + 1; j++) // Stars
         {
             cout << "* ";
         }
+
         cout << endl;
     }
 
@@ -79,10 +81,10 @@ void invertedTriangle(int n)
         Example:
         n = 4
         Output:
-        * * * * 
-        * * * 
-        * * 
-        * 
+        * * * *
+        * * *
+        * *
+        *
     */
 }
 

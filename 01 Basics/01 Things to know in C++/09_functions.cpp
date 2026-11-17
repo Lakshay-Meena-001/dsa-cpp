@@ -58,6 +58,6 @@ int main()
     int addition = sum2(n1, n2); // original n1 and n2 are modified
     cout << "The sum of 2 numbers after modification is: " << addition << endl;
     cout << "Modified n1 = " << n1 << ", n2 = " << n2 << endl;
-
+    
     return 0;
 }

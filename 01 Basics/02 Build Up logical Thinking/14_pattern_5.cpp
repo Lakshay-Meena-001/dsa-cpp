@@ -27,9 +27,9 @@ using namespace std;
 
 void printPattern(int rows)
 {
-    for (int i = 0; i < rows; i++) // Outer loop for rows
+    for (int i = 1; i <= rows; i++) // Outer loop for rows
     {
-        for (int j = 0; j < rows - i; j++) // Inner loop prints decreasing stars
+        for (int j = 1; j <= rows - i + 1; j++) // Inner loop prints decreasing stars
         {
             cout << "* ";
         }

@@ -20,17 +20,15 @@ Steps to solve:
 
 void printPattern(int rows)
 {
-    for (int i = 0; i < rows; i++)
+    for (int i = 1; i <= rows; i++)
     {
-        char ch = 'A' + i;
-        for (int j = 0; j <= i; j++)
+        for (int j = 1; j <= i; j++)
         {
-            cout << ch << " ";
+            cout << char('A' + i - 1) << " ";
         }
         cout << endl;
     }
 }
-
 int main()
 {
     int rows, testCases;

@@ -30,11 +30,12 @@ using namespace std;
 
 void printPattern(int rows)
 {
-    for (int i = 0; i < 2 * rows - 1; i++) // Outer loop for each line
-    {
-        int stars = i < rows ? i + 1 : 2 * rows - i - 1; // Logic for stars
 
-        for (int j = 0; j < stars; j++) // Print stars
+    for (int i = 1; i <= 2 * rows - 1; i++)
+    {
+        int stars = i <= rows ? i : 2 * rows - i;
+
+        for (int j = 1; j <= stars; j++)
         {
             cout << "* ";
         }

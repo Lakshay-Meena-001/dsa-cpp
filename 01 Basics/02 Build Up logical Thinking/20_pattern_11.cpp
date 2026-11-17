@@ -23,23 +23,26 @@ using namespace std;
 
 void printPattern(int rows)
 {
-    int spaces = 2 * (rows - 1); // initial spaces between halves
-
     for (int i = 1; i <= rows; i++)
     {
-        // Increasing numbers
+        // Left increasing numbers
         for (int j = 1; j <= i; j++)
+        {
             cout << j << " ";
+        }
 
-        // Spaces
-        for (int j = 1; j <= spaces; j++)
+        // Middle spaces calculated directly
+        for (int j = 1; j <= 2 * (rows - i); j++)
+        {
             cout << "  ";
+        }
 
-        // Decreasing numbers
+        // Right decreasing numbers
         for (int j = i; j >= 1; j--)
+        {
             cout << j << " ";
+        }
 
-        spaces -= 2; // decrease spaces for next row
         cout << endl;
     }
 

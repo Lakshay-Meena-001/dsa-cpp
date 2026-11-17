@@ -26,11 +26,11 @@ using namespace std;
 
 void printPattern(int rows)
 {
-    for (int i = 0; i < rows; i++)
+    for (int i = 1; i <= rows; i++)
     {
         int start = (i % 2 == 0) ? 1 : 0; // Decide starting value
 
-        for (int j = 0; j <= i; j++)
+        for (int j = 1; j <= i; j++)
         {
             cout << start << " ";
             start = 1 - start; // Alternate 0 and 1

@@ -27,55 +27,55 @@ Logic/Steps:
 
 void printPattern(int rows)
 {
-    if (rows <= 0) return;
-
-    // Top half
-    for (int i = rows; i >= 1; --i)
+    if (rows <= 0)
     {
-        int stars = i;
-        int spaces = 2 * (rows - i);
-
-        // Left block
-        for (int j = 1; j <= stars; ++j)
-        {
-            if (i == rows) cout << '*';          // full top row
-            else cout << ((j == 1 || j == stars) ? '*' : ' ');
-        }
-
-        // Middle gap
-        for (int j = 0; j < spaces; ++j) cout << ' ';
-
-        // Right block
-        for (int j = 1; j <= stars; ++j)
-        {
-            if (i == rows) cout << '*';
-            else cout << ((j == 1 || j == stars) ? '*' : ' ');
-        }
-
-        cout << '\n';
+        return;
     }
 
-    // Bottom half
-    for (int i = 2; i <= rows; ++i)
+    for (int i = rows; i >= 1; i--)
     {
-        int stars = i;
-        int spaces = 2 * (rows - i);
-
-        for (int j = 1; j <= stars; ++j)
+        // Left stars
+        for (int j = 1; j <= i; j++)
         {
-            if (i == rows) cout << '*';
-            else cout << ((j == 1 || j == stars) ? '*' : ' ');
+            cout << "*";
         }
 
-        for (int j = 0; j < spaces; ++j) cout << ' ';
-
-        for (int j = 1; j <= stars; ++j)
+        // Middle spaces
+        for (int j = 1; j <= 2 * (rows - i); j++)
         {
-            if (i == rows) cout << '*';
-            else cout << ((j == 1 || j == stars) ? '*' : ' ');
+            cout << " ";
         }
 
-        cout << '\n';
+        // Right stars
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+
+        cout << endl;
+    }
+
+    for (int i = 2; i <= rows; i++)
+    {
+        // Left stars
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+
+        // Middle spaces
+        for (int j = 1; j <= 2 * (rows - i); j++)
+        {
+            cout << " ";
+        }
+
+        // Right stars
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+
+        cout << endl;
     }
 }
 

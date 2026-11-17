@@ -20,9 +20,9 @@ Steps to solve:
 
 void printPattern(int rows)
 {
-    for (int i = 0; i < rows; i++)
+    for (int i = 1; i <= rows; i++)
     {
-        for (char ch = 'A'; ch < 'A' + (rows - i); ch++)
+        for (char ch = 'A'; ch <= 'A' + rows - i - 1; ch++)
         {
             cout << ch << " ";
         }
