@@ -17,7 +17,7 @@ vector<int> productExceptSelf(vector<int>& nums)
 
     int prefix = 1;
 
-    // Prefix Pass
+    // Prefix Pass to calculate the prefix product for each index except the current index
     for(int i = 0; i < n; i++)
     {
         answer[i] = prefix;
@@ -26,7 +26,7 @@ vector<int> productExceptSelf(vector<int>& nums)
 
     int suffix = 1;
 
-    // Suffix Pass
+    // Suffix Pass to calculate the suffix product for each index except the current index and multiply it with the prefix product
     for(int i = n - 1; i >= 0; i--)
     {
         answer[i] *= suffix;

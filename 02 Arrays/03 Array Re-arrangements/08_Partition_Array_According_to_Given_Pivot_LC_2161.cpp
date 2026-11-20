@@ -108,3 +108,53 @@ int main()
 
     return 0;
 }
+
+/*
+Problem:
+Array ko 3 parts mein partition karna hai using a given pivot.
+
+1. Pivot se chhote elements left side par hone chahiye.
+2. Pivot ke equal elements middle mein hone chahiye.
+3. Pivot se bade elements right side par hone chahiye.
+
+Input:  [4, 2, 7, 2, 5, 1, 8]
+Pivot:  4
+
+Output: [2, 2, 1, 4, 7, 5, 8]
+
+Approach: Dutch National Flag Algorithm (3 Pointers)
+
+Steps:
+1. Three pointers initialize karo:
+   low = 0, mid = 0, high = n - 1.
+
+2. Array ko traverse karo jab tak mid <= high.
+
+3. Agar nums[mid] < pivot:
+   - nums[low] aur nums[mid] ko swap karo.
+   - low++ aur mid++ karo.
+
+4. Agar nums[mid] == pivot:
+   - Element already correct partition mein hai.
+   - Sirf mid++ karo.
+
+5. Agar nums[mid] > pivot:
+   - nums[mid] aur nums[high] ko swap karo.
+   - high-- karo.
+   - mid++ mat karo, kyunki swapped element abhi
+     process nahi hua hai.
+
+6. Loop complete hone par array 3 partitions mein
+   divide ho jayega.
+
+TC: O(n) - Har element ko maximum constant times process karte hain.
+SC: O(1) - In-place rearrangement, extra array use nahi hota.
+
+Note:
+- low se pehle: Elements < pivot
+- low se mid - 1: Elements == pivot
+- high ke baad: Elements > pivot
+
+Important:
+Jab high ke saath swap hota hai, mid ko increment nahi karna hai.
+*/

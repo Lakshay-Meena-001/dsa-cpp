@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-//--------------------------------------------------
 // Topic   : Matrix Validation
 // File    : 10_Matrix_Validation.cpp
 //
@@ -24,11 +23,8 @@ using namespace std;
 // - Matrix properties
 // - Coordinate relationships
 // - Observation based validation
-//--------------------------------------------------
 
-//--------------------------------------------------
 // Print matrix.
-//--------------------------------------------------
 void printMatrix(const vector<vector<int>> &matrix)
 {
     for (const auto &row : matrix)
@@ -83,12 +79,16 @@ bool isIdentityMatrix(const vector<vector<int>> &matrix)
             if (i == j)
             {
                 if (matrix[i][j] != 1)
+                {
                     return false;
+                }
             }
             else
             {
                 if (matrix[i][j] != 0)
+                {
                     return false;
+                }
             }
         }
     }

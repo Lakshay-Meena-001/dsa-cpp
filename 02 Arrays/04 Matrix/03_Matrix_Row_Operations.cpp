@@ -3,7 +3,6 @@
 #include <climits>
 using namespace std;
 
-//--------------------------------------------------
 // Topic   : Matrix Row Operations
 // File    : 03_Matrix_Row_Operations.cpp
 //
@@ -27,11 +26,8 @@ using namespace std;
 // - Running maximum
 // - Running minimum
 // - Best row selection
-//--------------------------------------------------
 
-//--------------------------------------------------
 // Print every row separately.
-//--------------------------------------------------
 void printRows(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();
@@ -52,9 +48,7 @@ void printRows(const vector<vector<int>> &matrix)
     }
 }
 
-//--------------------------------------------------
 // Print sum of every row.
-//--------------------------------------------------
 void rowSum(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();
@@ -76,9 +70,7 @@ void rowSum(const vector<vector<int>> &matrix)
     }
 }
 
-//--------------------------------------------------
 // Print average of every row.
-//--------------------------------------------------
 void rowAverage(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();
@@ -99,9 +91,7 @@ void rowAverage(const vector<vector<int>> &matrix)
     }
 }
 
-//--------------------------------------------------
 // Print maximum element of every row.
-//--------------------------------------------------
 void rowMaximum(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();
@@ -123,9 +113,7 @@ void rowMaximum(const vector<vector<int>> &matrix)
     }
 }
 
-//--------------------------------------------------
 // Print minimum element of every row.
-//--------------------------------------------------
 void rowMinimum(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();
@@ -147,9 +135,7 @@ void rowMinimum(const vector<vector<int>> &matrix)
     }
 }
 
-//--------------------------------------------------
 // Find row having maximum sum.
-//--------------------------------------------------
 void rowWithMaximumSum(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();
@@ -179,9 +165,7 @@ void rowWithMaximumSum(const vector<vector<int>> &matrix)
     cout << "\nMaximum Sum          : " << bestSum << endl;
 }
 
-//--------------------------------------------------
 // Find row having minimum sum.
-//--------------------------------------------------
 void rowWithMinimumSum(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();

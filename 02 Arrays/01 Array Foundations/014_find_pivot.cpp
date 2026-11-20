@@ -14,10 +14,12 @@ public:
             totalSum += arr[i];
         }
 
+        // pehla element means 0th index left sum kuch nahi hai to 0
         int leftSum = 0;
 
         for(int i = 0; i < n; i++)
         {
+            // just thoda mathemtical trick, right sum = total sum - left sum - current element
             int rightSum = totalSum - leftSum - arr[i];
 
             if(leftSum == rightSum)

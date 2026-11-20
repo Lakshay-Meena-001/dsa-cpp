@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-//--------------------------------------------------
 // Topic   : Matrix Traversal
 // File    : 01_Matrix_Traversal.cpp
 //
@@ -23,7 +22,6 @@ using namespace std;
 // - Nested loops
 // - Row vs Column traversal
 // - Coordinate thinking
-//--------------------------------------------------
 
 
 // Print matrix in normal 2D format.
@@ -45,13 +43,11 @@ void printMatrix(const vector<vector<int>> &matrix)
     }
 }
 
-//--------------------------------------------------
 // Traverse matrix row by row.
 // Pattern:
 // → → →
 // → → →
 // → → →
-//--------------------------------------------------
 
 void rowWiseTraversal(const vector<vector<int>> &matrix)
 {
@@ -73,12 +69,10 @@ void rowWiseTraversal(const vector<vector<int>> &matrix)
     cout << endl;
 }
 
-//--------------------------------------------------
 // Traverse matrix column by column.
 // Pattern:
 // ↓ ↓ ↓
 // ↓ ↓ ↓
-//--------------------------------------------------
 
 void columnWiseTraversal(const vector<vector<int>> &matrix)
 {
@@ -100,12 +94,10 @@ void columnWiseTraversal(const vector<vector<int>> &matrix)
     cout << endl;
 }
 
-//--------------------------------------------------
 // Traverse every row from right to left.
 // Pattern:
 // ← ← ←
 // ← ← ←
-//--------------------------------------------------
 
 void reverseRowTraversal(const vector<vector<int>> &matrix)
 {
@@ -127,12 +119,10 @@ void reverseRowTraversal(const vector<vector<int>> &matrix)
     cout << endl;
 }
 
-//--------------------------------------------------
 // Traverse every column from bottom to top.
 // Pattern:
 // ↑ ↑ ↑
 // ↑ ↑ ↑
-//--------------------------------------------------
 
 void reverseColumnTraversal(const vector<vector<int>> &matrix)
 {

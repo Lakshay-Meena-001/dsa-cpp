@@ -26,9 +26,7 @@ int equalPairs(const vector<vector<int>> &grid)
 
     unordered_map<string, int> frequency;
 
-    //--------------------------------------------------
     // Pass 1 : Store every row.
-    //--------------------------------------------------
 
     for (int i = 0; i < n; i++)
     {
@@ -42,9 +40,7 @@ int equalPairs(const vector<vector<int>> &grid)
         frequency[signature]++;
     }
 
-    //--------------------------------------------------
     // Pass 2 : Compare every column.
-    //--------------------------------------------------
 
     int answer = 0;
 

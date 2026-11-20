@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-//--------------------------------------------------
 // Problem : Difference Between Ones and Zeros
 //           in Row and Column (LC 2482)
 //
@@ -15,7 +14,6 @@ using namespace std;
 // 1. Row preprocessing
 // 2. Column preprocessing
 // 3. Reuse computed information
-//--------------------------------------------------
 
 vector<vector<int>> onesMinusZeros(const vector<vector<int>> &grid)
 {
@@ -28,9 +26,7 @@ vector<vector<int>> onesMinusZeros(const vector<vector<int>> &grid)
     vector<int> colOnes(cols, 0);
     vector<int> colZeros(cols, 0);
 
-    //--------------------------------------------------
     // Count ones and zeros for every row.
-    //--------------------------------------------------
     for (int i = 0; i < rows; i++)
     {
         for (int j = 0; j < cols; j++)
@@ -46,9 +42,7 @@ vector<vector<int>> onesMinusZeros(const vector<vector<int>> &grid)
         }
     }
 
-    //--------------------------------------------------
     // Count ones and zeros for every column.
-    //--------------------------------------------------
     for (int j = 0; j < cols; j++)
     {
         for (int i = 0; i < rows; i++)
@@ -66,9 +60,7 @@ vector<vector<int>> onesMinusZeros(const vector<vector<int>> &grid)
 
     vector<vector<int>> answer(rows, vector<int>(cols));
 
-    //--------------------------------------------------
     // Build answer matrix.
-    //--------------------------------------------------
     for (int i = 0; i < rows; i++)
     {
         for (int j = 0; j < cols; j++)

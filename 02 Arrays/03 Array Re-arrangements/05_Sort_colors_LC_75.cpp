@@ -2,11 +2,9 @@
 #include <vector>
 using namespace std;
 
-//--------------------------------------------------
 // Brute / Better Approach (Counting Sort)
 // Time : O(n)
 // Space: O(1)
-//--------------------------------------------------
 void sortColorsBrute(vector<int> &nums)
 {
     int zero = 0;

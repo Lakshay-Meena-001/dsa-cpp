@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 // Boyer Moore Voting State
@@ -16,14 +16,18 @@ int majorityElement(const int arr[], int n)
 
     int count = 0;
 
-    for(int i=0;i<n;i++)
+    // bohot easy hai ye algorithm, bas 2 variable leke chalna hai, ek candidate aur ek count. and kaam kaise karta hai boyer moore algorithm, ye algorithm basically ye kaam karta hai ki agar kisi element ka count 0 ho jata hai to usko candidate bana do aur agar same element aata hai to count++ kar do aur agar different element aata hai to count-- kar do. and finally jo candidate bacha wo majority element hoga.
+
+    for (int i = 0; i < n; i++)
     {
-        if(count == 0)
+        // abhi koi element nahi select kiya means candidate hi nahi hai koi to count 0 hoga aur candidate ko arr[i] bana do.
+        if (count == 0)
         {
             candidate = arr[i];
         }
 
-        if(arr[i] == candidate)
+        // ab same element mil gaya to count++ kar do aur agar different element mil gaya to count-- kar do.
+        if (arr[i] == candidate)
         {
             count++;
         }
@@ -38,12 +42,12 @@ int majorityElement(const int arr[], int n)
 
 int main()
 {
-    int arr[] = {2,2,1,1,1,2,2};
+    int arr[] = {2, 2, 1, 1, 1, 2, 2};
 
-    int n = sizeof(arr)/sizeof(arr[0]);
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    cout<<"Majority Element = "
-        <<majorityElement(arr,n);
+    cout << "Majority Element = "
+         << majorityElement(arr, n);
 
     return 0;
 }

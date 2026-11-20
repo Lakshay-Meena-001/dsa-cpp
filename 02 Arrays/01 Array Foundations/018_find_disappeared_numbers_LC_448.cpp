@@ -9,8 +9,11 @@ public:
 
     vector<int> findDisappearedNumbers(int arr[], int n)
     {
+
         for(int i = 0; i < n; i++)
         {
+            // to travese karte hue har element ko uthao then uske corresponding index par jaake usko negative kardo
+            // and indexing start 0 se hoti hai isliye correct position par dekhne k liye humne -1 use kiya 
             int index = abs(arr[i]) - 1;
 
             if(arr[index] > 0)

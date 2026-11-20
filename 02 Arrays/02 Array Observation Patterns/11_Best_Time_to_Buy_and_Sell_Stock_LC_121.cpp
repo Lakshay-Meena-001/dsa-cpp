@@ -12,12 +12,13 @@ using namespace std;
 
 int maxProfit(vector<int> &prices)
 {
+    // profit kais ehoga ek stock ka jam hum minimum price pe kharid ke aur maximum price pe bech ke 
     int minPrice = INT_MAX;
     int bestProfit = 0;
 
     for (int price : prices)
     {
-        // Sell today
+        // agar aaj bechna hai to profit kya hoga
         int profit = price - minPrice;
 
         // Best profit till now

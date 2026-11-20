@@ -3,7 +3,6 @@
 #include <cmath>
 using namespace std;
 
-//--------------------------------------------------
 // Topic   : Matrix Diagonal Operations
 // File    : 05_Matrix_Diagonal_Operations.cpp
 //
@@ -24,14 +23,11 @@ using namespace std;
 // - Diagonal indexing
 // - Coordinate relationship
 // - Square matrix properties
-//--------------------------------------------------
 
-//--------------------------------------------------
 // Print Main Diagonal.
 //
 // Condition:
 // row == column
-//--------------------------------------------------
 
 void printMainDiagonal(const vector<vector<int>> &matrix)
 {
@@ -47,12 +43,10 @@ void printMainDiagonal(const vector<vector<int>> &matrix)
     cout << endl;
 }
 
-//--------------------------------------------------
 // Print Secondary Diagonal.
 //
 // Condition:
 // row + column == n - 1
-//--------------------------------------------------
 void printSecondaryDiagonal(const vector<vector<int>> &matrix)
 {
     int n = matrix.size();
@@ -67,9 +61,7 @@ void printSecondaryDiagonal(const vector<vector<int>> &matrix)
     cout << endl;
 }
 
-//--------------------------------------------------
 // Calculate Main Diagonal Sum.
-//--------------------------------------------------
 int mainDiagonalSum(const vector<vector<int>> &matrix)
 {
     int n = matrix.size();
@@ -84,9 +76,7 @@ int mainDiagonalSum(const vector<vector<int>> &matrix)
     return sum;
 }
 
-//--------------------------------------------------
 // Calculate Secondary Diagonal Sum.
-//--------------------------------------------------
 int secondaryDiagonalSum(const vector<vector<int>> &matrix)
 {
     int n = matrix.size();
@@ -101,19 +91,15 @@ int secondaryDiagonalSum(const vector<vector<int>> &matrix)
     return sum;
 }
 
-//--------------------------------------------------
 // Matrix Trace.
 //
 // Trace = Sum of Main Diagonal.
-//--------------------------------------------------
 int matrixTrace(const vector<vector<int>> &matrix)
 {
     return mainDiagonalSum(matrix);
 }
 
-//--------------------------------------------------
 // Absolute Difference Between Diagonal Sums.
-//--------------------------------------------------
 int diagonalDifference(const vector<vector<int>> &matrix)
 {
     int mainSum = mainDiagonalSum(matrix);

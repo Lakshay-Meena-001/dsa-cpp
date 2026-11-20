@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-//--------------------------------------------------
 // Problem : Reshape the Matrix (LC 566)
 // Pattern : Coordinate Mapping
 //
@@ -13,7 +12,6 @@ using namespace std;
 // 1. Linear Index
 // 2. Coordinate Mapping
 // 3. Matrix Traversal
-//--------------------------------------------------
 
 vector<vector<int>> matrixReshape(const vector<vector<int>> &matrix, int r, int c)
 {

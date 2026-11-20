@@ -61,6 +61,7 @@ void explainPairs()
     // 6️⃣ Sorting by second element using lambda
     sort(v.begin(), v.end(), [](pair<int, int> &a, pair<int, int> &b)
          { return a.second < b.second; });
+
     cout << "Sorted by second element:\n";
     for (auto &pr : v)
     {
@@ -79,10 +80,12 @@ void explainPairs()
     // 8️⃣ Common Competitive Programming Pattern: (value, index)
     vector<int> nums = {4, 2, 7, 1};
     vector<pair<int, int>> vp;
+
     for (int i = 0; i < nums.size(); i++)
     {
         vp.push_back({nums[i], i});
     }
+    
     sort(vp.begin(), vp.end());
     cout << "Sorted by value with index:\n";
     for (auto &pr : vp)

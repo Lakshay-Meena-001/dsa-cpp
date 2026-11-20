@@ -38,16 +38,17 @@ Difference between push() and emplace():
        s.emplace(1,2);           // Constructs pair directly in-place
 */
 
-void explainStackDSA() {
+void explainStackDSA()
+{
     cout << "========== STL Stack for DSA/LeetCode ==========\n";
 
     // 1️⃣ Declare a stack
     stack<int> s;
 
     // 2️⃣ Insert elements using push() and emplace()
-    s.push(10);           // push element
+    s.push(10); // push element
     s.push(20);
-    s.emplace(30);        // construct in-place
+    s.emplace(30); // construct in-place
 
     cout << "Top element after push/emplace: " << s.top() << "\n";
 
@@ -67,15 +68,16 @@ void explainStackDSA() {
     cout << "Top of s2 after swap: " << (s2.empty() ? -1 : s2.top()) << "\n";
 
     // 6️⃣ Stack with complex objects
-    stack<pair<int,int>> stPair;
-    stPair.push(make_pair(1,2));   // copy
-    stPair.emplace(3,4);           // in-place
+    stack<pair<int, int>> stPair;
+    stPair.push(make_pair(1, 2)); // copy
+    stPair.emplace(3, 4);         // in-place
     cout << "Top of stack<pair>: (" << stPair.top().first << "," << stPair.top().second << ")\n";
 
     // 7️⃣ Iterating through a stack (requires copy)
     cout << "Elements in s2 (top to bottom): ";
     stack<int> temp = s2;
-    while (!temp.empty()) {
+    while (!temp.empty())
+    {
         cout << temp.top() << " ";
         temp.pop();
     }
@@ -85,17 +87,23 @@ void explainStackDSA() {
     // Example: Reverse a string using stack
     string str = "HELLO";
     stack<char> sChar;
-    for(char c : str) sChar.push(c);
+    for (char c : str)
+    {
+        sChar.push(c);
+    }
 
     string reversed = "";
-    while(!sChar.empty()) {
+    
+    while (!sChar.empty())
+    {
         reversed += sChar.top();
         sChar.pop();
     }
     cout << "Original: " << str << ", Reversed using stack: " << reversed << "\n";
 }
 
-int main() {
+int main()
+{
     explainStackDSA();
     return 0;
 }

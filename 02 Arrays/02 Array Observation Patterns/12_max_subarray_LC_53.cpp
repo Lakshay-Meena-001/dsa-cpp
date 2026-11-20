@@ -13,9 +13,10 @@ using namespace std;
 
 int maxSubArray(vector<int> &nums)
 {
+    //kadane kya bolta hai ki agar hum current sum ko track karte hai aur har element ke liye check karte hai ki kya hum current sum ko continue kare ya fir new subarray start kare to hume maximum subarray sum mil jata hai.
     int currentSum = nums[0];
 
-    int bestSum = nums[0];
+    int maxSum = nums[0];
 
     for (int i = 1; i < nums.size(); i++)
     {
@@ -25,16 +26,15 @@ int maxSubArray(vector<int> &nums)
 
         // Best answer till now
 
-        bestSum = max(bestSum, currentSum);
+        maxSum = max(maxSum, currentSum);
     }
 
-    return bestSum;
+    return maxSum;
 }
 
 int main()
 {
-    vector<int> nums =
-        {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
 
     cout << "Maximum Sum = ";
 

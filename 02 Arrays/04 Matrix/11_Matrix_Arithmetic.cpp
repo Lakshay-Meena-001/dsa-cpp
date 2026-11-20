@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-//--------------------------------------------------
 // Topic   : Matrix Arithmetic
 // File    : 11_Matrix_Arithmetic.cpp
 //
@@ -26,11 +25,8 @@ using namespace std;
 // - Element-wise operations
 // - Matrix multiplication
 // - Triple nested loops
-//--------------------------------------------------
 
-//--------------------------------------------------
 // Print matrix.
-//--------------------------------------------------
 void printMatrix(const vector<vector<int>> &matrix)
 {
     for (const auto &row : matrix)
@@ -43,11 +39,9 @@ void printMatrix(const vector<vector<int>> &matrix)
     }
 }
 
-//--------------------------------------------------
 // Matrix Addition.
 //
 // Both matrices must have same dimensions.
-//--------------------------------------------------
 vector<vector<int>> addMatrices(const vector<vector<int>> &A, const vector<vector<int>> &B)
 {
     int rows = A.size();
@@ -66,9 +60,7 @@ vector<vector<int>> addMatrices(const vector<vector<int>> &A, const vector<vecto
     return result;
 }
 
-//--------------------------------------------------
 // Matrix Subtraction.
-//--------------------------------------------------
 vector<vector<int>> subtractMatrices(const vector<vector<int>> &A, const vector<vector<int>> &B)
 {
     int rows = A.size();
@@ -87,11 +79,9 @@ vector<vector<int>> subtractMatrices(const vector<vector<int>> &A, const vector<
     return result;
 }
 
-//--------------------------------------------------
 // Scalar Multiplication.
 //
 // Multiply every element by scalar.
-//--------------------------------------------------
 vector<vector<int>> scalarMultiplication(const vector<vector<int>> &matrix, int scalar)
 {
     int rows = matrix.size();
@@ -110,14 +100,12 @@ vector<vector<int>> scalarMultiplication(const vector<vector<int>> &matrix, int 
     return result;
 }
 
-//--------------------------------------------------
 // Matrix Multiplication.
 //
 // A = r1 × c1
 // B = c1 × c2
 //
 // Result = r1 × c2
-//--------------------------------------------------
 vector<vector<int>> multiplyMatrices(const vector<vector<int>> &A, const vector<vector<int>> &B)
 {
     int r1 = A.size();

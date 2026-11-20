@@ -82,6 +82,7 @@ void rearrangeInPlace(vector<int> &nums)
 
         while (j < n)
         {
+            // matlab ek out of place element mila hai, toh uske liye correct sign wala element search karna hai
             if ((i % 2 == 0 && nums[j] >= 0) || (i % 2 == 1 && nums[j] < 0))
             {
                 break;
@@ -97,7 +98,7 @@ void rearrangeInPlace(vector<int> &nums)
 
         int temp = nums[j];
 
-        // Preserve relative order by shifting
+        // to relative order kharab n aho isliy eelements ko right shift karna hai
         while (j > i)
         {
             nums[j] = nums[j - 1];
@@ -129,3 +130,63 @@ int main()
 
     return 0;
 }
+
+/*
+Problem:
+Ek array diya hai jisme positive aur negative numbers hain.
+Humein positive aur negative numbers ko alternatively arrange karna hai.
+Dono ka original relative order maintain karna hai.
+Agar kisi side ke elements bach jaayein, toh unhe end mein add karna hai.
+
+Input:  [1, 2, -4, -5, 3, -6]
+Output: [1, -4, 2, -5, 3, -6]
+
+Approach: Extra Arrays + Two Pointers
+
+Steps:
+1. Do separate vectors banao: positive aur negative.
+2. Original array traverse karke positive aur negative elements
+   ko respective vectors mein store karo.
+3. Ek empty answer vector banao.
+4. i aur j ko 0 se initialize karo.
+5. Jab tak dono vectors mein elements available hain:
+   - Ek positive element answer mein add karo.
+   - Ek negative element answer mein add karo.
+6. Agar positive elements bach jaayein, toh unhe add karo.
+7. Agar negative elements bach jaayein, toh unhe add karo.
+8. Finally, answer return karo.
+
+TC: O(n) - Array ko traverse aur elements ko answer mein add karte hain.
+SC: O(n) - Positive, negative aur answer vectors use kiye hain.
+*/
+
+/*
+Problem:
+Positive aur negative numbers ko alternatively arrange karna hai.
+Even index (0, 2, 4...) par positive aur odd index (1, 3, 5...) par
+negative number hona chahiye.
+Original relative order maintain karna hai.
+Extra array use nahi karna.
+
+Input:  [1, 2, -3, -4, 5, -6]
+Output: [1, -3, 2, -4, 5, -6]
+
+Approach: In-place + Shifting
+
+Steps:
+1. Array ko left se right traverse karo using i.
+2. Check karo ki current index par correct sign hai ya nahi.
+3. Agar even index par positive ya odd index par negative hai,
+   toh continue karo.
+4. Agar wrong element hai, toh i ke baad se correct sign wala
+   element search karo using j.
+5. Agar correct element nahi milta, toh loop stop kar do.
+6. Correct element ko temp mein store karo.
+7. Jahan correct element mila hai, wahan se i tak saare elements
+   ko ek position right shift karo.
+8. temp ko nums[i] par place karo.
+9. Finally, array in-place rearrange ho jayega.
+
+TC: O(n²) - Searching aur shifting dono karne pad sakte hain.
+SC: O(1) - Sirf temp variable use kiya hai.
+*/

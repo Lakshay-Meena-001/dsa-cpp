@@ -14,6 +14,8 @@ int xorObservation(const int arr[], int n)
 {
     int answer = 0;
 
+    // to sirf ek unique element hai aur baki sb elements 2 baar aa rahe hai to hum XOR ka use karenge
+    // agar hum kisi element ko khud se XOR karenge to wo 0 ho jaayega aur baki elements bhi 0 ho jaayenge aur sirf unique element hi bachega
     for(int i = 0; i < n; i++)
     {
         answer ^= arr[i];

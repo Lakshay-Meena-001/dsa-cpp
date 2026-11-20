@@ -12,6 +12,7 @@ using namespace std;
 
 int runningMinimum(const int arr[], int n)
 {
+    // abhi tak sbse chhota element kya hai assume karte hai ki first element hi sbse chhota hai
     int minTillNow = arr[0];
 
     for(int i = 1; i < n; i++)

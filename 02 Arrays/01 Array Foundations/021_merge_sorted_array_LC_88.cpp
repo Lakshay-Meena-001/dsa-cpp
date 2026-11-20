@@ -5,6 +5,7 @@ class Solution
 {
 public:
 
+    // to nums 1 m empty space already diya hai hume bas nums 2 ko nums 1 m merge karna hai sorted order m ab hum kahi tarah se kar sakte hai but best approach ye hai ki hum nums 1 ke end se start karte hue aur nums 2 ke end se start karte hue compare karte hue largest element ko nums 1 ke end m dalte jaayein
     void merge(int nums1[], int m, int nums2[], int n)
     {
         int i = m - 1;
@@ -27,6 +28,7 @@ public:
             k--;
         }
 
+        // to bache hue elements ko nums 1 m dal do
         while(j >= 0)
         {
             nums1[k] = nums2[j];

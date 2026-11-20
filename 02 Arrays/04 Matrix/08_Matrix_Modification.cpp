@@ -3,7 +3,6 @@
 #include <algorithm>
 using namespace std;
 
-//--------------------------------------------------
 // Topic   : Matrix Modification
 // File    : 08_Matrix_Modification.cpp
 //
@@ -25,11 +24,8 @@ using namespace std;
 // - Swapping
 // - Row modification
 // - Column modification
-//--------------------------------------------------
 
-//--------------------------------------------------
 // Print matrix.
-//--------------------------------------------------
 void printMatrix(const vector<vector<int>> &matrix)
 {
     for (const auto &row : matrix)
@@ -42,17 +38,13 @@ void printMatrix(const vector<vector<int>> &matrix)
     }
 }
 
-//--------------------------------------------------
 // Swap two rows.
-//--------------------------------------------------
 void swapRows(vector<vector<int>> &matrix, int row1, int row2)
 {
     swap(matrix[row1], matrix[row2]);
 }
 
-//--------------------------------------------------
 // Swap two columns.
-//--------------------------------------------------
 void swapColumns(vector<vector<int>> &matrix, int col1, int col2)
 {
     int rows = matrix.size();
@@ -63,9 +55,7 @@ void swapColumns(vector<vector<int>> &matrix, int col1, int col2)
     }
 }
 
-//--------------------------------------------------
 // Reverse every row.
-//--------------------------------------------------
 void reverseRows(vector<vector<int>> &matrix)
 {
     for (auto &row : matrix)
@@ -74,9 +64,7 @@ void reverseRows(vector<vector<int>> &matrix)
     }
 }
 
-//--------------------------------------------------
 // Reverse every column.
-//--------------------------------------------------
 void reverseColumns(vector<vector<int>> &matrix)
 {
     int rows = matrix.size();
@@ -97,17 +85,13 @@ void reverseColumns(vector<vector<int>> &matrix)
     }
 }
 
-//--------------------------------------------------
 // Replace one complete row.
-//--------------------------------------------------
 void replaceRow(vector<vector<int>> &matrix, int row, const vector<int> &newRow)
 {
     matrix[row] = newRow;
 }
 
-//--------------------------------------------------
 // Replace one complete column.
-//--------------------------------------------------
 void replaceColumn(vector<vector<int>> &matrix, int col, const vector<int> &newColumn)
 {
     int rows = matrix.size();
@@ -140,41 +124,31 @@ int main()
     cout << "\nOriginal Matrix\n";
     printMatrix(matrix);
 
-    //--------------------------------------------------
     // Swap Rows
-    //--------------------------------------------------
     swapRows(matrix, 0, rows - 1);
 
     cout << "\nAfter Swapping First & Last Row\n";
     printMatrix(matrix);
 
-    //--------------------------------------------------
     // Swap Columns
-    //--------------------------------------------------
     swapColumns(matrix, 0, cols - 1);
 
     cout << "\nAfter Swapping First & Last Column\n";
     printMatrix(matrix);
 
-    //--------------------------------------------------
     // Reverse Rows
-    //--------------------------------------------------
     reverseRows(matrix);
 
     cout << "\nAfter Reversing Every Row\n";
     printMatrix(matrix);
 
-    //--------------------------------------------------
     // Reverse Columns
-    //--------------------------------------------------
     reverseColumns(matrix);
 
     cout << "\nAfter Reversing Every Column\n";
     printMatrix(matrix);
 
-    //--------------------------------------------------
     // Replace Row
-    //--------------------------------------------------
     vector<int> newRow(cols, 100);
 
     replaceRow(matrix, 0, newRow);
@@ -182,9 +156,7 @@ int main()
     cout << "\nAfter Replacing First Row\n";
     printMatrix(matrix);
 
-    //--------------------------------------------------
     // Replace Column
-    //--------------------------------------------------
     vector<int> newColumn(rows, 999);
 
     replaceColumn(matrix, 0, newColumn);

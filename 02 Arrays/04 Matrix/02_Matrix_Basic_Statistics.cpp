@@ -3,7 +3,6 @@
 #include <climits>
 using namespace std;
 
-//--------------------------------------------------
 // Topic   : Matrix Basic Statistics
 // File    : 02_Matrix_Basic_Statistics.cpp
 //
@@ -26,11 +25,8 @@ using namespace std;
 // - Running maximum
 // - Running minimum
 // - Accumulation
-//--------------------------------------------------
 
-//--------------------------------------------------
 // Find largest element in matrix.
-//--------------------------------------------------
 int largestElement(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();
@@ -54,9 +50,9 @@ int largestElement(const vector<vector<int>> &matrix)
     return largest;
 }
 
-//--------------------------------------------------
+
 // Find smallest element in matrix.
-//--------------------------------------------------
+
 int smallestElement(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();

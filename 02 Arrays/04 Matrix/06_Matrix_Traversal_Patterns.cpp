@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-//--------------------------------------------------
 // Topic   : Matrix Traversal Patterns
 // File    : 06_Matrix_Traversal_Patterns.cpp
 //
@@ -23,9 +22,7 @@ using namespace std;
 // - Direction changes
 // - Boundary observation
 // - Diagonal grouping
-//--------------------------------------------------
 
-//--------------------------------------------------
 // Print boundary elements.
 //
 // Order:
@@ -33,7 +30,6 @@ using namespace std;
 // Right
 // Bottom
 // Left
-//--------------------------------------------------
 void boundaryTraversal(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();
@@ -92,12 +88,10 @@ void boundaryTraversal(const vector<vector<int>> &matrix)
     cout << endl;
 }
 
-//--------------------------------------------------
 // Print matrix in wave form.
 //
 // Even column  : Top -> Bottom
 // Odd column   : Bottom -> Top
-//--------------------------------------------------
 void waveTraversal(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();

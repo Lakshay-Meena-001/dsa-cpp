@@ -7,6 +7,8 @@ public:
 
     int missingNumber(int arr[], int n)
     {
+        // ye sirf 1 missing number ke liye kaam karega, agar 2 ya usse zyada missing number hai to ye kaam nahi karega
+        // apna basic math formula use karenge, sum of first n natural numbers = n*(n+1)/2
         int expectedSum = n * (n + 1) / 2;
 
         int actualSum = 0;

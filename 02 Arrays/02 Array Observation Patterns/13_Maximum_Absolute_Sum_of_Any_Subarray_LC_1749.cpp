@@ -1,7 +1,7 @@
-#include<iostream>
-#include<vector>
-#include<climits>
-#include<cmath>
+#include <iostream>
+#include <vector>
+#include <climits>
+#include <cmath>
 using namespace std;
 
 // LC 1749 Maximum Absolute Sum of Any Subarray
@@ -10,7 +10,7 @@ using namespace std;
 // Time : O(n)
 // Space : O(1)
 
-int maxAbsoluteSum(vector<int>& nums)
+int maxAbsoluteSum(vector<int> &nums)
 {
     int currentMax = nums[0];
     int bestMax = nums[0];
@@ -18,33 +18,27 @@ int maxAbsoluteSum(vector<int>& nums)
     int currentMin = nums[0];
     int bestMin = nums[0];
 
-    for(int i=1;i<nums.size();i++)
+    // ye bhi kaafi simple hai ki same ki abhi dono type k number hai positive and negative to hume dono ka maximum aur minimum nikalna padega  
+    for (int i = 1; i < nums.size(); i++)
     {
-        currentMax =
-        max(nums[i],
-            currentMax + nums[i]);
+        currentMax = max(nums[i], currentMax + nums[i]);
 
-        bestMax =
-        max(bestMax,currentMax);
+        bestMax = max(bestMax, currentMax);
 
-        currentMin =
-        min(nums[i],
-            currentMin + nums[i]);
+        currentMin = min(nums[i], currentMin + nums[i]);
 
-        bestMin =
-        min(bestMin,currentMin);
+        bestMin = min(bestMin, currentMin);
     }
 
-    return max(abs(bestMax),
-               abs(bestMin));
+    return max(abs(bestMax), abs(bestMin));
 }
 
 int main()
 {
     vector<int> nums =
-    {1,-3,2,3,-4};
+        {1, -3, 2, 3, -4};
 
-    cout<<maxAbsoluteSum(nums);
+    cout << maxAbsoluteSum(nums);
 
     return 0;
 }

@@ -28,9 +28,7 @@ vector<int> luckyNumbers(const vector<vector<int>> &matrix)
     vector<int> rowMin(rows, INT_MAX);
     vector<int> colMax(cols, INT_MIN);
 
-    //--------------------------------------------------
     // Pass 1 : Find minimum of every row.
-    //--------------------------------------------------
 
     for (int i = 0; i < rows; i++)
     {
@@ -40,9 +38,7 @@ vector<int> luckyNumbers(const vector<vector<int>> &matrix)
         }
     }
 
-    //--------------------------------------------------
     // Pass 2 : Find maximum of every column.
-    //--------------------------------------------------
 
     for (int j = 0; j < cols; j++)
     {
@@ -52,9 +48,7 @@ vector<int> luckyNumbers(const vector<vector<int>> &matrix)
         }
     }
 
-    //--------------------------------------------------
     // Pass 3 : Find Lucky Numbers.
-    //--------------------------------------------------
 
     vector<int> answer;
 

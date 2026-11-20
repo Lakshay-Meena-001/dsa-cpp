@@ -23,6 +23,7 @@ int maximumDifference(vector<int> &nums)
     return maximumDifference;
 }
 
+
 int main()
 {
     vector<int> nums = {7, 1, 5, 4};

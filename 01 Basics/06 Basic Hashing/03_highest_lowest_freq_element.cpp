@@ -8,12 +8,14 @@ int main() {
 
     vector<int> arr(n);
     cout << "Enter array elements: ";
+    
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
 
     // Step 1: Count frequency using hashing
     unordered_map<int, int> freq;
+
     for (int i = 0; i < n; i++) {
         freq[arr[i]]++;
     }

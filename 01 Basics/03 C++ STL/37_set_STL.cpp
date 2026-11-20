@@ -34,7 +34,8 @@ Differences between set and unordered_set:
 
 */
 
-void explainSetDSA() {
+void explainSetDSA()
+{
     cout << "========== STL Set for DSA/LeetCode ==========\n";
 
     // 1️⃣ Basic set operations
@@ -45,32 +46,39 @@ void explainSetDSA() {
     s.insert(10); // duplicate ignored
 
     cout << "Elements in set: ";
-    for (auto x : s) cout << x << " "; // 5 10 20
+    for (auto x : s)
+        cout << x << " "; // 5 10 20
     cout << "\n";
 
     // 2️⃣ Erase and find
     s.erase(10);
     cout << "After erase(10): ";
-    for (auto x : s) cout << x << " "; // 5 20
+    for (auto x : s)
+        cout << x << " "; // 5 20
     cout << "\n";
 
     auto it = s.find(20);
-    if(it != s.end()) cout << "Found 20\n";
-    else cout << "20 not found\n";
+    if (it != s.end())
+        cout << "Found 20\n";
+    else
+        cout << "20 not found\n";
 
-    cout << "Count of 5: " << s.count(5) << "\n"; // 1
+    cout << "Count of 5: " << s.count(5) << "\n";   // 1
     cout << "Count of 15: " << s.count(15) << "\n"; // 0
 
     // 3️⃣ Lower and upper bounds
     s.insert(15);
-    auto lb = s.lower_bound(12); // first >= 12
-    auto ub = s.upper_bound(15); // first > 15
+    auto lb = s.lower_bound(12);                  // first >= 12
+    auto ub = s.upper_bound(15);                  // first > 15
     cout << "Lower bound of 12: " << *lb << "\n"; // 15
     cout << "Upper bound of 15: " << *ub << "\n"; // 20
 
     // 4️⃣ Reverse order traversal
     cout << "Reverse order: ";
-    for(auto it = s.rbegin(); it != s.rend(); it++) cout << *it << " "; // 20 15 5
+    for (auto it = s.rbegin(); it != s.rend(); it++)
+    {
+        cout << *it << " ";
+    } // 20 15 5
     cout << "\n";
 
     // 5️⃣ Multiset allows duplicates
@@ -79,7 +87,9 @@ void explainSetDSA() {
     ms.insert(10);
     ms.insert(20);
     cout << "Multiset elements: ";
-    for(auto x : ms) cout << x << " "; // 10 10 20
+    
+    for (auto x : ms)
+        cout << x << " "; // 10 10 20
     cout << "\n";
 
     // 6️⃣ LeetCode-style usage: Count distinct elements
@@ -88,7 +98,8 @@ void explainSetDSA() {
     cout << "Number of distinct elements: " << distinct.size() << "\n"; // 3
 }
 
-int main() {
+int main()
+{
     explainSetDSA();
     return 0;
 }

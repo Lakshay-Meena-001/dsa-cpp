@@ -26,7 +26,9 @@ public:
                 for (int j = 0; j < n; j++)
                 {
                     if (nums[j] < pivot)
+                    {
                         position++;
+                    }
                 }
 
                 position = 0;
@@ -34,7 +36,9 @@ public:
                 for (int j = 0; j < i; j++)
                 {
                     if (nums[j] < pivot)
+                    {
                         position++;
+                    }
                 }
             }
 
@@ -43,13 +47,17 @@ public:
                 for (int j = 0; j < n; j++)
                 {
                     if (nums[j] < pivot)
+                    {
                         position++;
+                    }
                 }
 
                 for (int j = 0; j < i; j++)
                 {
                     if (nums[j] == pivot)
+                    {
                         position++;
+                    }
                 }
             }
 
@@ -58,13 +66,17 @@ public:
                 for (int j = 0; j < n; j++)
                 {
                     if (nums[j] <= pivot)
+                    {
                         position++;
+                    }
                 }
 
                 for (int j = 0; j < i; j++)
                 {
                     if (nums[j] > pivot)
+                    {
                         position++;
+                    }
                 }
             }
 
@@ -86,25 +98,37 @@ public:
         for (int x : nums)
         {
             if (x < pivot)
+            {
                 less.push_back(x);
+            }
 
             else if (x == pivot)
+            {
                 equal.push_back(x);
+            }
 
             else
+            {
                 greater.push_back(x);
+            }
         }
 
         vector<int> answer;
 
         for (int x : less)
+        {
             answer.push_back(x);
+        }
 
         for (int x : equal)
+        {
             answer.push_back(x);
+        }
 
         for (int x : greater)
+        {
             answer.push_back(x);
+        }
 
         return answer;
     }
@@ -115,6 +139,7 @@ public:
     {
         int left = 0;
 
+        // easy hai ekdum bas same ek 0 index par pointer rakho uske left m hum sbhi pivot se chhote elements ko swap karte jao aur left pointer ko increment karte jao
         for (int right = 0; right < nums.size(); right++)
         {
             if (nums[right] < pivot)
@@ -157,7 +182,6 @@ int main()
     vector<int> ans2 = obj.better(nums, pivot);
 
     obj.print(ans2);
-    
 
     return 0;
 }

@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-//--------------------------------------------------
 // Topic   : Matrix Spiral Traversal
 // File    : 07_Matrix_Spiral_Traversal.cpp
 //
@@ -21,9 +20,7 @@ using namespace std;
 // - Four boundary pointers
 // - Simulation thinking
 // - Boundary shrinking
-//--------------------------------------------------
 
-//--------------------------------------------------
 // Print matrix in clockwise spiral order.
 //
 // Order:
@@ -31,7 +28,6 @@ using namespace std;
 // Right Column
 // Bottom Row
 // Left Column
-//--------------------------------------------------
 void clockwiseSpiralTraversal(const vector<vector<int>> &matrix)
 {
     int rows = matrix.size();

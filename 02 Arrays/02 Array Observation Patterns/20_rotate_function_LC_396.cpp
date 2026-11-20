@@ -16,6 +16,9 @@ int maxRotateFunction(vector<int> &nums)
         currentRotation += 1LL * i * nums[i]; //f(0) needs only first will calculate from this 
     }
 
+    //jo elements aage gaye, unke contribution mein total sum add hoga. Jo last element tha, woh first position par aa gaya, toh uska contribution pehle tha, ab 0 ho gaya.
+    //means F(1)=F(0)+Sum−n×LastElement
+
     long long maximumRotation = currentRotation;
 
     for (int k = 1; k < n; k++)

@@ -1,7 +1,6 @@
-#include<iostream>
-#include<climits>
+#include <iostream>
+#include <climits>
 using namespace std;
-
 
 // Kadane State Template
 
@@ -17,20 +16,19 @@ using namespace std;
 // Time : O(n)
 // Space : O(1)
 
-
 int kadaneStateDemo(const int arr[], int n)
 {
     int currentSum = 0;
 
     int bestSum = INT_MIN;
 
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
     {
         // Running Sum
         currentSum += arr[i];
 
         // Running Best
-        if(currentSum > bestSum)
+        if (currentSum > bestSum)
         {
             bestSum = currentSum;
         }
@@ -41,11 +39,11 @@ int kadaneStateDemo(const int arr[], int n)
 
 int main()
 {
-    int arr[] = {2,5,-3,4};
+    int arr[] = {2, 5, -3, 4};
 
-    int n = sizeof(arr)/sizeof(arr[0]);
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    cout<<"Best Sum = "<<kadaneStateDemo(arr,n);
+    cout << "Best Sum = " << kadaneStateDemo(arr, n);
 
     return 0;
 }

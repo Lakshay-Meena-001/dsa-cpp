@@ -51,6 +51,7 @@ void explainVector() {
     */
 
     vector<int>::iterator it = v.begin();
+
     it++;                        // Move to 2nd element
     cout << "Second element: " << *it << endl;
 
@@ -99,6 +100,7 @@ void explainVector() {
 
     // Insert another vector
     vector<int> extra = {111, 222};
+    
     temp.insert(temp.begin(), extra.begin(), extra.end());
 
     /*

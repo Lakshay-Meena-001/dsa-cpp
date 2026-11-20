@@ -28,9 +28,7 @@ void gameOfLife(vector<vector<int>> &board)
         {
             {-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
 
-    //--------------------------------------------------
     // Pass 1 : Mark temporary states.
-    //--------------------------------------------------
 
     for (int row = 0; row < rows; row++)
     {
@@ -79,9 +77,7 @@ void gameOfLife(vector<vector<int>> &board)
         }
     }
 
-    //--------------------------------------------------
     // Pass 2 : Convert temporary states.
-    //--------------------------------------------------
 
     for (int row = 0; row < rows; row++)
     {

@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-//--------------------------------------------------
 // Problem : Toeplitz Matrix (LC 766)
 // Pattern : Matrix Validation
 //
@@ -12,7 +11,6 @@ using namespace std;
 // Learning:
 // 1. Diagonal Validation
 // 2. Compare with Top Left
-//--------------------------------------------------
 
 bool isToeplitzMatrix(const vector<vector<int>> &matrix)
 {

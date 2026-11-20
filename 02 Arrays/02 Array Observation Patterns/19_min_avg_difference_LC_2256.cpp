@@ -34,6 +34,7 @@ int minimumAverageDifference(vector<int> &nums)
         {
             rightAverage = 0;
         }
+        
         else
         {
             rightAverage = rightSum / (n - i - 1);

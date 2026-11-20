@@ -7,6 +7,8 @@ public:
 
     void sortByParity(int arr[], int n)
     {
+        // ek left m pointer rakho ek side even rakhne hai ek side m odd rakhne hai 
+        // 2 4 6 1 3 5 aise, original 1 2 3 4 5 6
         int left = 0;
 
         for(int current = 0; current < n; current++)

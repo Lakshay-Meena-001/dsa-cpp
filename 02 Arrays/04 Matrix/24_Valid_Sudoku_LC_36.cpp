@@ -17,9 +17,7 @@ using namespace std;
 
 bool isValidSudoku(const vector<vector<char>> &board)
 {
-    //--------------------------------------------------
     // Check every row.
-    //--------------------------------------------------
 
     for (int i = 0; i < 9; i++)
     {
@@ -43,9 +41,7 @@ bool isValidSudoku(const vector<vector<char>> &board)
         }
     }
 
-    //--------------------------------------------------
     // Check every column.
-    //--------------------------------------------------
 
     for (int j = 0; j < 9; j++)
     {
@@ -69,9 +65,7 @@ bool isValidSudoku(const vector<vector<char>> &board)
         }
     }
 
-    //--------------------------------------------------
     // Check every 3×3 box.
-    //--------------------------------------------------
 
     for (int boxRow = 0; boxRow < 9; boxRow += 3)
     {
